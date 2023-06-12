@@ -11,12 +11,18 @@ export const zhSidebar = sidebar({
     //   children: "structure",
     // },
     {
-      text: "文章",
+      text: "论文分享",
       icon: "book",
       prefix: "posts/",
       children: "structure",
     },
-    // "intro",
+    {
+      text: "学术竞赛",
+      icon: "laptop-code",
+      prefix: "competitions/",
+      children: "structure",
+    },
+    "intro",
     // "slides",
   ],
 });

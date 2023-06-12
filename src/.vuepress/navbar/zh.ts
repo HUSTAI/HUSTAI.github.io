@@ -19,8 +19,18 @@ export const zhNavbar = navbar([
   //   ],
   // },
   {
-    text: "言图科技",
+    text: "学术竞赛",
     icon: "book",
-    link: "https://theme-hope.vuejs.press/",
+    prefix: "/zh/competitions/",
+    children: [
+      {
+        text: "2023-6",
+        icon: "pen-to-square",
+        prefix: "baidu2023/",
+        children: [
+          { text: "百度2023语言竞赛", icon: "pen-to-square", link: "README" }
+        ]
+      }
+    ],
   },
 ]);
