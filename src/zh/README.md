@@ -2,11 +2,36 @@
 home: true
 layout: BlogHome
 icon: home
-title: 博客主页
+title: 主页
+hero: false
 heroImage: /logo.svg
 heroText: 404的博客
 heroFullScreen: false
 tagline: 分享知识-分享快乐
+article: false
+
+projects:
+  - icon: project
+    name: Markdown
+    desc: 增强语法
+    link: https://plugin-md-enhance.vuejs.press/zh/guide/
+
+  - icon: book
+    name: paperswithcode
+    desc: 论文分类
+    link: https://paperswithcode.com/
+
+  - icon: article
+    name: arxiv
+    desc: 最新论文
+    link: https://arxiv.org/
+
+  - icon: link
+    name: 言图科技
+    desc: 合作伙伴
+    link: http://www.yantu-tech.com/
+
+
 # projects:
 #   - icon: project
 #     name: 项目名称

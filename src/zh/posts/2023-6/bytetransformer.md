@@ -8,8 +8,9 @@ tag:
   - 优化
   - nvidia
   - 字节
-star: 10
-editLink: false # 禁用编辑功能
+# star: 10
+# editLink: false # 禁用编辑功能
+sticky: 10
 ---
 
 # bytetransformer
@@ -22,6 +23,9 @@ contribution：
 ●我们设计和开发了 ByteTransformer，这是一种针对可变长度输入优化的高性能 GPU 加速转换器。 ByteTransformer 已部署服务于包括字节跳动的 TikTok 和抖音在内的世界级应用
 ●我们提出了一种padding-free算法，将输入张量与可变长度序列打包，并计算所有变换器操作的定位偏移向量以进行索引，从而使整个变换器管道免于填充和计算零令牌
 ●我们提出了一个Fused Multi-Head Attention来减轻中间矩阵的内存开销，中间矩阵是序列长度的二次方，在 MHA 中没有引入由于填充可变长度输入而导致的冗余计算。我们融合的 MHA 的一部分已经部署在 NVIDIA CUTLASS 的生产代码库中
+
+<!-- more --> 
+
 ●我们手动调整层规范化的内存占用，添加偏差和激活以压缩系统的最终性能
 ●我们在 NVIDIA A100 GPU 上对 ByteTransformer 的性能进行基准测试，用于前向传递类 BERT 转换器，包括 BERT、ALBERT、DistilBERT 和 DeBERTa。实验结果表明，我们的融合Multi-Head Attentio 优于标准 PyTorch 注意力 6.13 倍。在标准 BERT transformer 的端到端性能方面，ByteTransformer 分别超越 PyTorch、TensorFlow、Tencent TurboTransformer、Microsoft DeepSpeed 和 NVIDIA FasterTransformer 87%、131%、138%、74% 和 55%
 

@@ -1,5 +1,5 @@
 import { defineUserConfig } from "vuepress";
-import theme from "./theme.js";
+import theme from "./theme";
 
 export default defineUserConfig({
   base: "/",
@@ -12,8 +12,8 @@ export default defineUserConfig({
     },
     "/zh/": {
       lang: "zh-CN",
-      title: "博客示例",
-      description: "404的博客示例",
+      title: "知识分享",
+      description: "HUST-404的知识分享",
     },
   },
 
