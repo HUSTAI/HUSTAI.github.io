@@ -99,10 +99,6 @@ export default hopeTheme({
         intro: "/zh/intro.html",
       },
 
-      // page meta
-      metaLocales: {
-        editLink: "在 GitHub 上编辑此页",
-      },
     },
   },
 

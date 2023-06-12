@@ -25,7 +25,7 @@ star: true
 # 你可以自定义页脚
 footer: 这是测试显示的页脚
 # 你可以自定义版权信息
-copyright: 无版权
+copyright: 404
 ---
 
 `more` 注释之前的内容被视为文章摘要。
