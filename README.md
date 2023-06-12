@@ -14,3 +14,10 @@
 
 - [vuepress-theme-hope](https://theme-hope.vuejs.press/zh/guide/markdown/intro.html)
 - [Markdown增强语法](https://plugin-md-enhance.vuejs.press/zh/)
+- [pnpm安装](https://pnpm.io/installation)
+
+    - pnpm安装失败可以尝试手动安装
+    ```
+    curl -fsSL https://get.pnpm.io/install.sh | sh -
+    ```
+
