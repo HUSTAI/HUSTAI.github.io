@@ -13,7 +13,7 @@ tag:
 sticky: 10
 ---
 
-# bytetransformer
+# ByteTransformer
 20230605汇报-bytetransformer
 
 论文地址：https://arxiv.org/abs/2210.03052
