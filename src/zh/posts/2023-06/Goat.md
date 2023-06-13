@@ -1,5 +1,5 @@
 ---
-author: 孙鸿博
+author: 孙鸿博孙鸿博
 icon: pen-to-square
 date: 2023-06-12
 category:
