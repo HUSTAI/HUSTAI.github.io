@@ -11,7 +11,7 @@ article: false
 
 本页面包含一些论文的分享：
 
-- [ByteTransformer](./2023-6/ByteTransformer.md)
+- [ByteTransformer](./2023-06/ByteTransformer.md)
 - [Goat](./2023-06/Goat.md)
 - [QLoRA](./2023-06/qlora.md)
 

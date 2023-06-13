@@ -24,7 +24,7 @@ export const zhNavbar = navbar([
     prefix: "/zh/competitions/",
     children: [
       {
-        text: "2023-6",
+        text: "baidu2023",
         icon: "pen-to-square",
         prefix: "baidu2023/",
         children: [
