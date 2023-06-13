@@ -5,7 +5,7 @@ export default defineUserConfig({
   base: "/",
 
   locales: {
-    "/": {
+    "/en/": {
       lang: "en-US",
       title: "Blog Demo",
       description: "A blog demo for 404",
