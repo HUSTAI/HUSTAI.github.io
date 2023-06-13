@@ -14,6 +14,7 @@
 更多功能和问题请参考：
 
 - [vuepress-theme-hope](https://theme-hope.vuejs.press/zh/guide/markdown/intro.html)
+- [Markdown基本语法和示例](https://theme-hope.vuejs.press/zh/cookbook/markdown/)
 - [Markdown增强语法](https://plugin-md-enhance.vuejs.press/zh/)
 - [pnpm安装](https://pnpm.io/installation)
 
