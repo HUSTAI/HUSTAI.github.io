@@ -101,7 +101,7 @@ export default hopeTheme({
 
     },
   },
-
+  // 加密文档在此修改
   encrypt: {
     config: {
       "/demo/encrypt.html": ["1234"],
@@ -115,7 +115,7 @@ export default hopeTheme({
     comment: {
       // You should generate and use your own comment service
       provider: "Waline",
-      serverURL: "https://waline-comment.vuejs.press",
+      serverURL: "https://waline-test-3k1u6a5k5-sheli00.vercel.app",
     },
 
     // all features are enabled for demo, only preserve features you need here
