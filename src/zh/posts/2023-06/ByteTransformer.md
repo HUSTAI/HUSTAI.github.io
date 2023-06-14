@@ -3,10 +3,10 @@ author: 猞猁
 icon: pen-to-square
 date: 2023-06-05
 category:
-  - transformer
+  - 大语言模型
 tag:
+  - transformer
   - 优化
-  - nvidia
   - 字节
 sticky: 10
 ---
