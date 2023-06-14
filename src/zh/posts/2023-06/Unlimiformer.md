@@ -14,7 +14,9 @@ sticky: 10
 
 # Unlimiformer 介绍
 
-[原文链接]( https://mp.weixin.qq.com/s/VktrpfEUK99Zrm3AJJwW-g)
+Unlimiformer 可以被注入到任何现有的编码器 - 解码器 transformer 中，能够处理长度不限的输入。
+
+<!-- more --> 
 
 Transformer 是时下最强大的 seq2seq 架构。预训练 transformer 通常具有 512（例如 BERT）或 1024 个（例如 BART）token 的个上下文窗口，这对于目前许多文本摘要数据集（XSum、CNN/DM）来说是足够长的。
 
@@ -78,3 +80,4 @@ height="2.375436351706037in"}
 ![descript](/assets/images/posts/2023-6/Unlimiformer6.png){width="6.299305555555556in"
 height="3.21964457567804in"}
 
+[原文链接]( https://mp.weixin.qq.com/s/VktrpfEUK99Zrm3AJJwW-g)
