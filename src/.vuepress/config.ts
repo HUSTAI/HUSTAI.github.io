@@ -13,7 +13,7 @@ export default defineUserConfig({
     "/zh/": {
       lang: "zh-CN",
       title: "知识分享",
-      description: "HUST-404的知识分享",
+      description: "HUSTAIL的知识分享",
     },
   },
 
