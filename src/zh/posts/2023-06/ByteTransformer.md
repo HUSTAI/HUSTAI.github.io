@@ -16,6 +16,8 @@ sticky: 10
 # ByteTransformer
 20230605汇报-bytetransformer
 
+![论文截图](/assets/images/posts/2023-6/bytetransformer1.png "图1 论文信息")
+
 论文地址：https://arxiv.org/abs/2210.03052
 代码地址：https://github.com/bytedance/ByteTransformer
 
