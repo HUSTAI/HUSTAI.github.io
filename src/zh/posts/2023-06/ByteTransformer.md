@@ -3,10 +3,10 @@ author: 猞猁
 icon: pen-to-square
 date: 2023-06-05
 category:
-  - transformer
+  - 大语言模型
 tag:
+  - transformer
   - 优化
-  - nvidia
   - 字节
 sticky: 10
 ---
@@ -61,9 +61,7 @@ grouped GEMM 原理：kernel 中每个 threadblock (CTA) 固定分块大小，�
 - 共享子问题参数。对同一个输入，不同 head 的 valid seqlen 相同，problem size 也相同，通过共享使参数存储量从 batch_size x head_num 减少到 batch_size。
 - warp prefetch. 原始实现中，每个 CUDA thread 依次读取所有的子问题 problem size，效率很低。改为一个 warp 内线程读取连续的 32 个子问题参数，然后通过 warp 内线程通信交换数据，每个线程的读取次数降低到 1/32。
 
-
-![warp prefetch 示意图](/assets/images/posts/2023-6/bytetransformer4.png "图4 warp prefetch")
-
+![warp prefetch 示意图](/assets/images/posts/2023-6/bytetransformer3.png "图4 warp prefetch")
 
 
 ## 变种 Transformer 支持
@@ -80,4 +78,3 @@ grouped GEMM 原理：kernel 中每个 threadblock (CTA) 固定分块大小，�
 <div id="refer-anchor-2"></div>
 
 - [2] NVIDIA https://github.com/NVIDIA/cutlass
-
