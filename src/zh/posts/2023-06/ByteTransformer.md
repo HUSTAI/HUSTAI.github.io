@@ -2,6 +2,7 @@
 author: 猞猁
 icon: pen-to-square
 date: 2023-06-05
+shortTitle: Bytetransformer
 category:
   - 大语言模型
 tag:
@@ -18,7 +19,8 @@ sticky: 10
 - 提出了一种**padding-free**算法，将输入张量与可变长度序列打包，并计算所有变换器操作的定位偏移向量以进行索引，从而使整个变换器管道免于填充和计算零令牌
 - 提出了一个**融合的多头注意力**来降低中间矩阵的内存开销，中间矩阵是序列长度的二次方。
 
-<!-- more --> 
+<!-- more -->
+
 ![论文截图](/assets/images/posts/2023-6/bytetransformer1.png "图1 论文信息")
 
 论文地址：https://arxiv.org/abs/2210.03052
