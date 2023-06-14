@@ -1,12 +1,12 @@
 ---
-author: bobo
+author: shbobo
 icon: pen-to-square
 date: 2023-06-14
 category:
   - 大语言模型
 tag:
   - LLM
-star: true
+# star: true
 ---
 
 # LLM如何重映现实世界（一）
@@ -15,6 +15,9 @@ star: true
 >版权归属原作者，如涉侵权，请联系删除
 
  一种观点认为GPT 4 这种 LLM 模型仅仅学会了语言中的单词共现等浅层的表面统计关系，其实并未具备智能，只是类似鹦鹉学舌的语言片段缝合怪而已；另外一种观点则认为：GPT 4 不仅学会了语言元素间的表面统计关系，而且学到了人类语言甚至包括物理世界的内在运行规律，文字是由内在智能产生的，所以 LLM 具备类人智能。
+
+<!-- more --> 
+
 # 一、预备知识
 ## 1.1 什么是NTP任务
 目前规模够大的 LLM 模型，在训练基座模型的时候，都采用「Next Token Prediction，NTP」 (后文为了书写简洁，有时会简称为 NTP) 任务。Next Token Prediction 如此简单的操作，就是通过语言中前面的单词，来产生下一个单词

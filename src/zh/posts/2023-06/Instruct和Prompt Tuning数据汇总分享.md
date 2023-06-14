@@ -1,12 +1,12 @@
 ---
-author: shb
+author: shbobo
 icon: pen-to-square
 date: 2023-06-13
 category:
+  - 数据集
+tag:
   - Instruct Tuning
   - Prompt Tuning
-tag:
-  - 数据集
 ---
 
 # Instruct/Prompt Tuning数据

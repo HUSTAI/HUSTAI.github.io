@@ -3,11 +3,11 @@ author: 最后的开神
 icon: pen-to-square
 date: 2023-06-12
 category:
-  - finetinue
+  - 微调技术
 tag:
   - lora
   - gpt
-star: true
+# star: true
 ---
 
 # 让微调更高效

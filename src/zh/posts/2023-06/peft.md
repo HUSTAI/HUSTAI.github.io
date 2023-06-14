@@ -2,8 +2,9 @@
 author: 何溢博
 icon: pen-to-square
 date: 2023-06-13
+shortTitle: PEFT
 category:
-  - finetinue
+  - 微调技术
 tag:
   - Hugging Face
   - LoRA
@@ -11,13 +12,13 @@ tag:
   - Prefix Tuning
   - P-Tuning
   - Prompt Tuning
-star: true
+# star: true
 # editLink: false # 禁用编辑功能
-sticky: 10
+# sticky: 10
 ---
 
-
 # PEFT：最先进的参数高效微调方法
+
 ------
 
 ## 1、PEFT定义
@@ -28,11 +29,11 @@ PEFT，即参数高效微调 （Parameter-Efficient Fine-Tuning）技术，同�
 
 PEFT能够将预训练的语言模型 （PLM） 有效地适应各种下游应用程序，而无需微调模型的所有参数。在微调大型 PLM时，PEFT方法仅***微调少量（额外）模型参数***，从而大大降低了计算和存储成本。最近的PEFT技术实现了与完全微调相当的性能。
 
+<!-- more --> 
+
 ## 2、PEFT分类
 
-
 Hugging Face开源的PEFT库目前支持5种方法，分别是：
-
 
 - **LoRA**: [LoRA: Low-Rank Adaptation of Large Language Models(微软，2021年10月)](https://arxiv.org/abs/2106.09685)
 

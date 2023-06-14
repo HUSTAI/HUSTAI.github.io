@@ -8,7 +8,7 @@ tag:
   - 优化
   - 内存
   - 机器学习
-sticky: 10
+# sticky: 10
 ---
 
 # int8量化
