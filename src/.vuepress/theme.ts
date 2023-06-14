@@ -59,7 +59,8 @@ export default hopeTheme({
   },
 
   locales: {
-    "/": {
+    //英文版
+    "/en/": {
       // navbar
       navbar: enNavbar,
 
@@ -72,7 +73,7 @@ export default hopeTheme({
 
       blog: {
         description: "A FrontEnd programmer",
-        intro: "/intro.html",
+        intro: "/en/intro.html",
       },
 
       metaLocales: {
@@ -80,9 +81,7 @@ export default hopeTheme({
       },
     },
 
-    /**
-     * Chinese locale config
-     */
+    //中文版
     "/zh/": {
       // navbar
       navbar: zhNavbar,
@@ -104,7 +103,7 @@ export default hopeTheme({
   // 加密文档在此修改
   encrypt: {
     config: {
-      "/demo/encrypt.html": ["1234"],
+      "/en/demo/encrypt.html": ["1234"],
       "/zh/demo/encrypt.html": ["1234"],
     },
   },
@@ -116,7 +115,7 @@ export default hopeTheme({
       // You should generate and use your own comment service
       provider: "Waline",
       serverURL: "https://waline-test-3k1u6a5k5-sheli00.vercel.app",
-      login: 'force'
+      login: 'enable'
     },
 
     // all features are enabled for demo, only preserve features you need here
