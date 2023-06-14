@@ -3,7 +3,11 @@ import theme from "./theme";
 
 export default defineUserConfig({
   base: "/",
-
+  head: [
+    [
+      'link', { rel: 'icon', href: '/logo.svg'}
+    ]
+  ],
   locales: {
     "/en/": {
       lang: "en-US",
