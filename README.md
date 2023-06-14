@@ -3,18 +3,31 @@
 ## 修改流程
 
 推荐使用 `pnpm` 包管理工具
-1. 安装[node](https://nodejs.cn/download/)>=16.0.0
+1. 安装[Node](https://nodejs.cn/download/)>=16.0.0
 2. 使用 `npm install -g pnpm` 安装
 3. 克隆本仓库代码 `https://github.com/HUSTAIL/HUSTAIL.github.io.git`
 4. 运行`pnpm install` 初始化项目
 5. 本地修改完成之后运行 `pnpm docs:dev`，确保没有问题再提交
 
+## 添加文章
+
+在 [src/zh/posts/yyyy-MM](https://github.com/HUSTAIL/HUSTAIL.github.io/tree/main/src/zh/posts) 目录下增加一个新的 `md` 文件，参考[配置](https://theme-hope.vuejs.press/zh/config/frontmatter/info.html)来设置 `Frontmatter`
+
+`category` 请从以下类别中选择
+
+- tokenizer
+- 大语言模型
+- 微调技术
+- 提示技术
+- 评估方法
+- 数据集
+
 ## 添加图片
 1. 在 `public/assets/images` 路径下存放图片文件，文件名示例 `bytetransformer1.png`
-2. 在md文档中添加图片，上下各空一行以正确显示图片标题
+2. 在 `md` 文档中添加图片，**上下各空一行**以正确显示图片标题
 
 ```plain
-![alt name ](/assets/images/posts/2023-6/image.xxx "image title")
+![alt name](/assets/images/posts/yyyy-MM/image.xxx "image title")
 ```
 
 ## 添加参考文献
