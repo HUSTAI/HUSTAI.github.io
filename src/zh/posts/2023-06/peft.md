@@ -16,18 +16,18 @@ star: true
 sticky: 10
 ---
 
-# PEFT
+# PEFT：最先进的参数高效微调方法
 ------
 
 ## 1、PEFT定义
 
-PEFT，即参数高效微调 （Parameter-Efficient Fine-Tuning），是Hugging Face开源的一个***高效微调大模型***的库。
+PEFT，即参数高效微调 （Parameter-Efficient Fine-Tuning）技术，同时是Hugging Face开源的一个***高效微调大模型***的库。
 
 PEFT能够将预训练的语言模型 （PLM） 有效地适应各种下游应用程序，而无需微调模型的所有参数。在微调大型 PLM时，PEFT方法仅***微调少量（额外）模型参数***，从而大大降低了计算和存储成本。最近的PEFT技术实现了与完全微调相当的性能。
 
 ## 2、PEFT分类
 
-PEFT库目前支持5种方法，分别是：
+Hugging Face开源的PEFT库目前支持5种方法，分别是：
 
 - **LoRA**: [LoRA: Low-Rank Adaptation of Large Language Models(微软，2021年10月)](https://arxiv.org/abs/2106.09685)
 
@@ -269,98 +269,3 @@ soft prompt比较依靠模型参数量，在参数量超过10B的模型上，效
 
 - [Prompt范式第二阶段｜Prefix-tuning、P-tuning、Prompt-tuning](https://zhuanlan.zhihu.com/p/400790006)
 - [使用PEFT微调LLMs](https://zhuanlan.zhihu.com/p/623866920)
-
-
-## 5、smart-connection插件
-
-
-```smart-connections
-LoRA的实现原理
-```
-
-
-
-## 6、openAI embedding
-
-### 什么是 Embedding？
-
-OpenAI 中的文本 Embedding 衡量文本字符串之间的相关性。Embedding 通常用于以下场景：
-
--   **搜索**（结果按查询字符串的相关性进行排序）
--   **聚类**（将文本字符串按相似性分组）
--   **推荐**（推荐具有相关文本字符串的项目）
--   **异常检测**（识别相关性较小的异常值）
--   **多样性测量**（分析相似度分布）
--   **分类**（文本字符串按其最相似的标签进行分类）
-
-### 如何获取 Embedding
-
-要获取 Embedding，将文本字符串和选定的 Embedding 模型 ID（例如 `text-embedding-ada-002`）发送到 [Embedding API 端点](https://link.zhihu.com/?target=https%3A//platform.openai.com/docs/api-reference/embeddings)。获得的响应中将包含一个 Embedding，你可以提取、保存和使用。
-
-请求示例：
-
-```python3
-response = openai.Embedding.create(
-    input="Your text string goes here",
-    model="text-embedding-ada-002"
-)
-embeddings = response['data'][0]['embedding']
-```
-
-响应示例：
-
-```json
-{
-  "data": [
-    {
-      "embedding": [
-        -0.006929283495992422,
-        -0.005336422007530928,
-        ...
-        -4.547132266452536e-05,
-        -0.024047505110502243
-      ],
-      "index": 0,
-      "object": "embedding"
-    }
-  ],
-  "model": "text-embedding-ada-002",
-  "object": "list",
-  "usage": {
-    "prompt_tokens": 5,
-    "total_tokens": 5
-  }
-}
-```
-
-
-### Embedding 模型
-
-OpenAI 提供了一个第二代 Embedding 模型（在模型 ID 中标记为 `-002`）和 16 个第一代模型（在模型 ID 中标记为 `-001`）。
-
-几乎所有用例我们都推荐使用 `text-embedding-ada-002`。这一模型更好、更便宜、更简单易用。相关信息可以阅读[博客文章](https://link.zhihu.com/?target=https%3A//openai.com/blog/new-and-improved-embedding-model)中的公告。
-
-![[Pasted image 20230425111857.png]]
-
-#### 第二代模型
-
-![[Pasted image 20230425112040.png]]
-
-
-#### 第一代模型（不推荐使用）
-
-所有第一代模型（以 `-001` 结尾的模型）均使用 [GPT-3 分词器](https://link.zhihu.com/?target=https%3A//platform.openai.com/tokenizer)，最大输入为 2046 个 token。
-
-第一代 Embedding 由五种不同的模型系列生成，针对三种不同的任务进行调整：文本搜索、文本相似度和代码搜索。其中搜索模型都有两个：一个用于短查询，一个用于长文档。每个系列包括不同质量和速度的四个模型：
-
-![[Pasted image 20230425112057.png]]
-
-
-## 7、Obsidian关系图谱
-
-关联的文档
-[[20230424_PEFT调研]]
-[[20230424_PEFT调研 1]]
-[[20230424_PEFT调研 2]]
-[[20230424_PEFT调研 3]]
-
