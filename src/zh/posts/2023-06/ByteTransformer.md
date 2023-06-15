@@ -10,7 +10,7 @@ tag:
   - 优化
   - 字节
 # star: 10
-sticky: 10
+# sticky: 10
 ---
 
 # 大幅优化推理速度-ByteTransformer
