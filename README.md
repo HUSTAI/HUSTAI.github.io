@@ -27,7 +27,7 @@
 2. 在 `md` 文档中添加图片，**上下各空一行**以正确显示图片标题
 
 ```plain
-![alt name](/assets/images/posts/yyyy-MM/image.xxx "image title")
+![alt name](/assets/images/${category}/image.xxx "image title")
 ```
 
 ## 添加参考文献
