@@ -11,19 +11,19 @@
 
 ## 添加文章
 
-在 [src/zh/posts/yyyy-MM](https://github.com/HUSTAI/HUSTAI.github.io/tree/main/src/zh/posts) 目录下增加一个新的 `md` 文件，参考[配置](https://theme-hope.vuejs.press/zh/config/frontmatter/info.html)来设置 `Frontmatter`
-
 `category` 请从以下类别中选择
 
 - tokenizer
-- 大语言模型
-- 微调技术
-- 提示技术
-- 评估方法
-- 数据集
+- 大语言模型(`llm`)
+- 微调技术(`finetune`)
+- 提示技术(`prompt`)
+- 评估方法(`eval`)
+- 数据集(`dataset`)
+
+在 [src/zh/posts/yyyy-MM](https://github.com/HUSTAI/HUSTAI.github.io/tree/main/src/zh/posts/) 目录下增加一个新的 `md` 文件，参考[配置](https://theme-hope.vuejs.press/zh/config/frontmatter/info.html)来设置 `Frontmatter`
 
 ## 添加图片
-1. 在 `public/assets/images` 路径下存放图片文件，文件名示例 `bytetransformer1.png`
+1. 在 `public/assets/images/${category}` 路径下存放图片文件，文件名示例 `bytetransformer1.png`
 2. 在 `md` 文档中添加图片，**上下各空一行**以正确显示图片标题
 
 ```plain
