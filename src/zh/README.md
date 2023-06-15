@@ -11,26 +11,35 @@ tagline: 分享知识-分享快乐
 article: false
 
 projects:
-  - icon: project
-    name: Markdown
-    desc: 增强语法
-    link: https://plugin-md-enhance.vuejs.press/zh/guide/
+  - icon: book
+    name: 数据集
+    desc: desc to add
+    link: /zh/category/数据集/
 
   - icon: book
-    name: paperswithcode
-    desc: 论文分类
-    link: https://paperswithcode.com/
+    name: 评估方法
+    desc: desc to add
+    link: /zh/category/评估方法/
 
-  - icon: article
-    name: arxiv
-    desc: 最新论文
-    link: https://arxiv.org/
+  - icon: book
+    name: 微调技术
+    desc: desc to add
+    link: /zh/category/微调技术/
 
-  - icon: link
-    name: 言图科技
-    desc: 合作伙伴
-    link: http://www.yantu-tech.com/
+  - icon: book
+    name: 大语言模型
+    desc: desc to add
+    link: /zh/category/大语言模型/
 
+  - icon: book
+    name: 提示技术
+    desc: desc to add
+    link: /zh/category/提示技术/
+
+  - icon: book
+    name: tokenizer
+    desc: desc to add
+    link: /zh/category/tokenizer/
 
 # projects:
 #   - icon: project

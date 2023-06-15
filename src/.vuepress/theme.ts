@@ -23,6 +23,8 @@ export default hopeTheme({
 
   blog: {
     medias: {
+      Yantu: ["http://www.yantu-tech.com/", MR_HOPE_AVATAR],
+      GitHub: "https://github.com/HUSTAI",
       // Baidu: "https://example.com",
       // BiliBili: "https://example.com",
       // Bitbucket: "https://example.com",
@@ -34,7 +36,6 @@ export default hopeTheme({
       // Facebook: "https://example.com",
       // Flipboard: "https://example.com",
       // Gitee: "https://example.com",
-      // GitHub: "https://example.com",
       // Gitlab: "https://example.com",
       // Gmail: "mailto:info@example.com",
       // Instagram: "https://example.com",
