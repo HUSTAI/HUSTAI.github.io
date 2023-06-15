@@ -1,6 +1,6 @@
 ---
-author: shbobo
-icon: pen-to-square
+author: shb
+icon: book
 date: 2023-06-13
 shortTitle: Instruct/Prompt Tuning数据
 category:

@@ -11,34 +11,28 @@ tagline: 分享知识-分享快乐
 article: false
 
 projects:
-  - icon: book
+  - icon: gears
     name: 数据集
-    desc: desc to add
     link: /zh/category/数据集/
 
-  - icon: book
+  - icon: signs-post
     name: 评估方法
-    desc: desc to add
     link: /zh/category/评估方法/
 
-  - icon: book
+  - icon: splotch
     name: 微调技术
-    desc: desc to add
     link: /zh/category/微调技术/
 
-  - icon: book
+  - icon: circle-question
     name: 大语言模型
-    desc: desc to add
     link: /zh/category/大语言模型/
 
-  - icon: book
+  - icon: gem
     name: 提示技术
-    desc: desc to add
     link: /zh/category/提示技术/
 
-  - icon: book
+  - icon: puzzle-piece
     name: tokenizer
-    desc: desc to add
     link: /zh/category/tokenizer/
 
 # projects:

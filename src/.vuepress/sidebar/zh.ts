@@ -6,17 +6,28 @@ export const zhSidebar = sidebar({
     {
 
       text: "论文分享",
-      icon: "book",
+      icon: "lightbulb",
       prefix: "posts/",
-      children: "structure",
+      // collapsible: false,
+      children: [
+        "dataset/",
+        "eval/",
+        "finetune/",
+        "llm/",
+        "prompt/",
+        "tokenizer/"
+      ]
+      // activeMatch: "^/zh/posts/",
+      // link: "/zh/posts/README.md"
     },
-    {
-      text: "学术竞赛",
-      icon: "book",
-      prefix: "competitions/",
-      children: "structure",
-    },
-    "intro",
+    // {
+    //   text: "学术竞赛",
+    //   icon: "book",
+    //   prefix: "competitions/",
+    //   children: "structure",
+    // },
+    // "intro",
     // "slides",
   ],
+  "/zh/posts/": "structure",
 });

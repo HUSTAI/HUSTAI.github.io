@@ -1,6 +1,6 @@
 ---
-author: 何溢博
-icon: pen-to-square
+author: hyb
+icon: boxes-packing
 date: 2023-06-13
 shortTitle: PEFT
 category:

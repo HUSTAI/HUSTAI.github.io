@@ -2,7 +2,7 @@
 author: sunhb
 icon: pen-to-square
 date: 2023-06-14
-shortTitle:  LLM如何重映现实世界（一）
+shortTitle: LLM如何重映现实世界（一）
 category:
   - 大语言模型
 tag:
@@ -11,8 +11,8 @@ tag:
 
 # LLM如何重映现实世界（一）：LLM中的信息压缩能力与思维回路假设
 
->知乎原文：https://zhuanlan.zhihu.com/p/632795115
->版权归属原作者，如涉侵权，请联系删除
+> 知乎原文：https://zhuanlan.zhihu.com/p/632795115
+> 版权归属原作者，如涉侵权，请联系删除
 
  一种观点认为GPT 4 这种 LLM 模型仅仅学会了语言中的单词共现等浅层的表面统计关系，其实并未具备智能，只是类似鹦鹉学舌的语言片段缝合怪而已；另外一种观点则认为：GPT 4 不仅学会了语言元素间的表面统计关系，而且学到了人类语言甚至包括物理世界的内在运行规律，文字是由内在智能产生的，所以 LLM 具备类人智能。
 
@@ -40,7 +40,7 @@ tag:
 假设要传输的序列是连续质数数字序列
 下面是gpt-3.5-turbo和oasst两个模型的回答结果，
 
-![](/assets/images/posts/2023-6/ntp_image1.png)
+![](/assets/images/llm/ntp_image1.png)
 
 可以看出，gpt3.5 是学会了质数这种抽象概念的，否则这道题很难回答好，如果不理解这个概念，就会出现图右小模型这种不知所云的回答。这一方面说明大模型确实可以学习一些抽象概念，另一方面说明大模型在这方面表现确实比小模型要好。
 
@@ -53,7 +53,7 @@ tag:
 >论文：Dissecting Recall of Factual Associations in Auto-Regressive Language Models
 >剖析自回归语言模型中事实关联的回忆
 
-![](/assets/images/posts/2023-6/ntp_image2.png)
+![](/assets/images/llm/ntp_image2.png)
 
 经过研究，发现 GPT 在提取这条知识的时候，经历了明显的三阶段过程：
 1. 主题补充
@@ -65,7 +65,7 @@ GPT 模型在 「by」单词这个位置，也就是 NTP 要产生输出 token �
 
 ## 三、知识点在 Transformer 中的分布
 
-![图片](/assets/images/posts/2023-6/ntp_image3.png "单语义神经元与多语义神经元")
+![图片](/assets/images/llm/ntp_image3.png "单语义神经元与多语义神经元")
 
 目前发现 LLM 中存在很多单个的神经元，它们各自只对输入里某个特殊的知识点产生响应，也就是说只会被特定输入模式激活，对其它无关输入保持沉默。
 
@@ -73,7 +73,7 @@ GPT 模型在 「by」单词这个位置，也就是 NTP 要产生输出 token �
 2. 很多不同语言含义的知识点都会激活某个神经元，这类神经元被称为「多语义神经元」。
 Superposition 概念的含义是：假设要编码的特征的数量 n 远远多于网络参数 d，可找到办法，来用 d 维神经元编码比 d 数量大得多的 n 个特征，这种编码机制被称为 superposition，所以它是被发现存在 Transformer 结构里的一种信息压缩编码机制。
 
-![图片](/assets/images/posts/2023-6/ntp_image4.png  "重叠编码")
+![图片](/assets/images/llm/ntp_image4.png  "重叠编码")
 
 Superposition 和「多语义神经元」 关系密切，目前发现 LLM 内部是这样做的（参考 Finding Neurons in a Haystack: Case Studies with Sparse Probing）：如上图所示，LLM 的 Superposition 机制是由多个「多语义神经元」 联合构成的，每个神经元会对输入中的多个不同知识点都有响应，所以仅仅通过一个 「多语义神经元」 是无法探测当前是对谁在做出响应，但是如果有多个对某个知识点都有响应的「多语义神经元」，在它们的响应之上做个线性组合，就能探测到输入中我们想识别的那个知识点（上图中蓝色部分)。也就是说，LLM 通过组合多个「多语义神经元」来对某个具体特征或知识点进行编码。所以，「多语义神经元」和知识点之间的关系是多对多的映射，一个知识点会激发很多对它进行编码的「多语义神经元」，而一个 「多语义神经元」也会对多个输入知识点产生响应。
 另外，「Polysemanticity and Capacity in Neural Networks」这个文章指出了：在模型学习过程中，为了增加模型参数的利用效率，
