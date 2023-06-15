@@ -1,17 +1,18 @@
 ---
 title: 论文分享
 index: false
-icon: pen-to-square
+icon: book
 article: false
 ---
 
 ## 目录
-
 论文分享
 
 本页面包含一些论文的分享：
 
-- [ByteTransformer](./2023-06/ByteTransformer.md)
-- [Goat](./2023-06/Goat.md)
-- [QLoRA](./2023-06/qlora.md)
-
+- [数据集](./dataset/)
+- [评估方法](./eval/)
+- [微调技术](./finetune/)
+- [大语言模型](./llm/)
+- [提示技术](./prompt/)
+- [tokenizer](./tokenizer/)
