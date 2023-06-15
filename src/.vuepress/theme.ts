@@ -123,7 +123,8 @@ export default hopeTheme({
       repo: "HUSTAI/HUSTAI.github.io",
       repoId: "R_kgDOJuM35g",
       category: "Announcements",
-      categoryId: "DIC_kwDOJuM35s4CXKBd"
+      categoryId: "DIC_kwDOJuM35s4CXKBd",
+      mapping: "title"
     },
 
     // all features are enabled for demo, only preserve features you need here
