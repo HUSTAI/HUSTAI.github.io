@@ -112,11 +112,18 @@ export default hopeTheme({
   plugins: {
     blog: true,
 
+    // comment: {
+    //   // You should generate and use your own comment service
+    //   provider: "Waline",
+    //   serverURL: "https://waline-test-3k1u6a5k5-sheli00.vercel.app",
+    //   login: 'enable'
+    // },
     comment: {
-      // You should generate and use your own comment service
-      provider: "Waline",
-      serverURL: "https://waline-test-3k1u6a5k5-sheli00.vercel.app",
-      login: 'enable'
+      provider: "Giscus",
+      repo: "HUSTAI/HUSTAI.github.io",
+      repoId: "R_kgDOJuM35g",
+      category: "Announcements",
+      categoryId: "DIC_kwDOJuM35s4CXKBd"
     },
 
     // all features are enabled for demo, only preserve features you need here
