@@ -2,6 +2,7 @@
 author: sunhb
 icon: pen-to-square
 date: 2023-06-14
+shortTitle:  LLM如何重映现实世界（一）
 category:
   - 大语言模型
 tag:
