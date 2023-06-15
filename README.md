@@ -20,7 +20,7 @@
 - 评估方法(`eval`)
 - 数据集(`dataset`)
 
-在 [src/zh/posts/yyyy-MM](https://github.com/HUSTAI/HUSTAI.github.io/tree/main/src/zh/posts/${category}) 目录下增加一个新的 `md` 文件，参考[配置](https://theme-hope.vuejs.press/zh/config/frontmatter/info.html)来设置 `Frontmatter`
+在 [src/zh/posts/yyyy-MM](https://github.com/HUSTAI/HUSTAI.github.io/tree/main/src/zh/posts/) 目录下增加一个新的 `md` 文件，参考[配置](https://theme-hope.vuejs.press/zh/config/frontmatter/info.html)来设置 `Frontmatter`
 
 ## 添加图片
 1. 在 `public/assets/images/${category}` 路径下存放图片文件，文件名示例 `bytetransformer1.png`
