@@ -39,7 +39,7 @@ tag:
 假设要传输的序列是连续质数数字序列
 下面是gpt-3.5-turbo和oasst两个模型的回答结果，
 
-![图片](/assets/images/posts/2023-6/ntp_image1.png "图片")
+![](/assets/images/posts/2023-6/ntp_image1.png)
 
 可以看出，gpt3.5 是学会了质数这种抽象概念的，否则这道题很难回答好，如果不理解这个概念，就会出现图右小模型这种不知所云的回答。这一方面说明大模型确实可以学习一些抽象概念，另一方面说明大模型在这方面表现确实比小模型要好。
 
@@ -52,7 +52,7 @@ tag:
 >论文：Dissecting Recall of Factual Associations in Auto-Regressive Language Models
 >剖析自回归语言模型中事实关联的回忆
 
-![图片](/assets/images/posts/2023-6/ntp_image2.png "图片")
+![](/assets/images/posts/2023-6/ntp_image2.png)
 
 经过研究，发现 GPT 在提取这条知识的时候，经历了明显的三阶段过程：
 1. 主题补充
