@@ -29,7 +29,7 @@ tag:
 
 ## 1 介绍
 
-现有的一些深度学习框架，如Tensorflow，PyTorch，TVM以及NVIDIA TensorRT等，要求输入序列长度相同，才能利用批处理加速Transformer计算。然而，在实际场景中，输入序列通常是变长的，而零填充会引入大量的额外计算开销。字节跳动AML团队先前提出的“effective Transformer”[<sup>1</sup>](#refer-anchor-1)，通过对输入的重排列，实现了 QKV projection 和 MLP 的 padding free，但 self attention 部分仍然需要 padding。
+现有的一些深度学习框架，如Tensorflow，PyTorch，TVM以及NVIDIA TensorRT等，要求输入序列长度相同，才能利用批处理加速Transformer计算。然而，在实际场景中，输入序列通常是变长的，而零填充会引入大量的额外计算开销。字节跳动AML团队先前提出的“effective Transformer”[^effective]，通过对输入的重排列，实现了 QKV projection 和 MLP 的 padding free，但 self attention 部分仍然需要 padding。
 为了解决这个问题，字节跳动 AML 团队提出了 ByteTransformer，它实现了变长输入的 padding free 计算，并且实现了全面的 kernel fusion 以进一步提高性能。
 
 ## 2 优化算法
@@ -54,7 +54,7 @@ tag:
 
 （1）对于短 seqlen, 因为可以把 QK 整行放在共享内存进行 softmax 操作，通过手写 kernel 的方式实现，矩阵乘通过调用 wmma 接口使用 TensorCore 保证高性能。
 
-（2）对于长 seqlen, 因为共享内存大小限制，不能在一个手写 kernel 中完成所有操作。基于高性能的 CUTLASS[<sup>2</sup>](#refer-anchor-2)  grouped GEMM, 分成两个 gemm kernel 实现，并把 add_bias, softmax 等操作 fused 到 GEMM kernel 中。
+（2）对于长 seqlen, 因为共享内存大小限制，不能在一个手写 kernel 中完成所有操作。基于高性能的 CUTLASS[^cutlass]  grouped GEMM, 分成两个 gemm kernel 实现，并把 add_bias, softmax 等操作 fused 到 GEMM kernel 中。
 
 ### 2.3 CUTLASS grouped GEMM
 
@@ -87,10 +87,7 @@ grouped GEMM 原理：kernel 中每个 threadblock (CTA) 固定分块大小，�
 
 ## 4 参考
 
-<div id="refer-anchor-1"></div>
+[^effective]: ByteDance https://github.com/bytedance/effective_transformer
 
-- [1] ByteDance https://github.com/bytedance/effective_transformer
-<div id="refer-anchor-2"></div>
-
-- [2] NVIDIA https://github.com/NVIDIA/cutlass
+[^cutlass]: NVIDIA https://github.com/NVIDIA/cutlass
 
