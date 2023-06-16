@@ -32,22 +32,14 @@
 
 ## 添加参考文献
 
-1. 在文件底部添加参考文献
-
-```md
-<div id="refer-anchor-1"></div>
-- [1] ByteDance https://github.com/bytedance/effective_transformer
-<div id="refer-anchor-2"></div>
-- [2] ByteDance https://github.com/bytedance/effective_transformer
+1. 添加锚点
 ```
-
-2. 在需要添加引用的地方增加锚点
-
-```md
-[<sup>1</sup>](#refer-anchor-1)
-[<sup>2</sup>](#refer-anchor-2)
+aaa[^锚点文字]
 ```
-
+2. 在文档末尾描述锚点
+```
+[^锚点文字]: 这是对锚点文字的介绍
+```
 ---
 
 更多功能和问题请参考：
