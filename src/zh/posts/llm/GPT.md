@@ -12,7 +12,7 @@ tag:
 
 # GPT论文分享：Improving Language Understanding by Generative Pre-Training
 
-论文标题：Improving Language Understanding by Generative Pre-Training
+作者证明了通过在大量未标注文本上对语言模型进行生成式预训练，然后在每个特定任务上进行歧视性微调，可以在这些任务上实现巨大收益。与以前的方法相比，他们在微调期间利用面向任务的输入转换来实现有效的转移，同时对模型架构所需的更改最小。
 
 <!-- more -->
 
