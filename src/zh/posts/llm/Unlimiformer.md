@@ -1,10 +1,10 @@
 ---
-author: 研究生鱼皮
+author: 研究生鱼皮-yjf
 icon: pen-to-square
 date: 2023-06-14
 shortTitle: Unlimiformer
 category:
-  - 大语言模型
+  - 语言模型
 tag:
   - 摘要
   - Transformer

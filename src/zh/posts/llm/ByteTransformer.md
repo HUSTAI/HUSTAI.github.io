@@ -1,10 +1,10 @@
 ---
-author: 猞猁
+author: 猞猁-zlj
 icon: pen-to-square
 date: 2023-06-05
 shortTitle: Bytetransformer
 category:
-  - 大语言模型
+  - 语言模型
 tag:
   - transformer
   - 优化

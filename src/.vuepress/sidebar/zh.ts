@@ -4,18 +4,16 @@ export const zhSidebar = sidebar({
   "/zh/": [
     "",
     {
-
       text: "论文分享",
       icon: "lightbulb",
       prefix: "posts/",
-      // collapsible: false,
       children: [
-        "dataset/",
-        "eval/",
-        "finetune/",
         "llm/",
         "prompt/",
-        "tokenizer/"
+        "finetune/",
+        "eval/",
+        "dataset/",
+        "token/"
       ]
       // activeMatch: "^/zh/posts/",
       // link: "/zh/posts/README.md"

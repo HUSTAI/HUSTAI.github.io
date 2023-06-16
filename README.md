@@ -13,21 +13,21 @@
 
 `category` 请从以下类别中选择
 
-- tokenizer
-- 大语言模型(`llm`)
-- 微调技术(`finetune`)
+- 语言模型(`llm`)
 - 提示技术(`prompt`)
+- 微调技术(`finetune`)
 - 评估方法(`eval`)
 - 数据集(`dataset`)
+- `token`
 
-在 [src/zh/posts/yyyy-MM](https://github.com/HUSTAI/HUSTAI.github.io/tree/main/src/zh/posts/) 目录下增加一个新的 `md` 文件，参考[配置](https://theme-hope.vuejs.press/zh/config/frontmatter/info.html)来设置 `Frontmatter`
+在 [src/zh/posts/${category}](https://github.com/HUSTAI/HUSTAI.github.io/tree/main/src/zh/posts/) 目录下增加一个新的 `md` 文件，参考[配置](https://theme-hope.vuejs.press/zh/config/frontmatter/info.html)来设置 `Frontmatter`
 
 ## 添加图片
 1. 在 `public/assets/images/${category}` 路径下存放图片文件，文件名示例 `bytetransformer1.png`
 2. 在 `md` 文档中添加图片，**上下各空一行**以正确显示图片标题
 
 ```plain
-![alt name](/assets/images/posts/yyyy-MM/image.xxx "image title")
+![alt name](/assets/images/${category}/image.xxx "image title")
 ```
 
 ## 添加参考文献
@@ -61,4 +61,3 @@
 ```bash
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 ```
-
