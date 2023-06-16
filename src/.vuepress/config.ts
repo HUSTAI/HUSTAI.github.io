@@ -39,6 +39,10 @@ export default defineUserConfig({
           getter: (page) => page.frontmatter.tag,
           formatter: "标签：$content",
         },
+        {
+          getter: (page) => page.frontmatter.title,
+          formatter: "标题：$content",
+        },
       ]
     })
   ]
