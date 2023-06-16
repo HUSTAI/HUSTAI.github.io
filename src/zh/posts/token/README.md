@@ -1,10 +1,12 @@
 ---
-title: tokenizer
+title: token
 icon: puzzle-piece
 index: false
 article: false
 category:
-  - tokenizer
+  - token
 tag:
-  - tokenizer
+  - token
+dir:
+  order: 6
 ---

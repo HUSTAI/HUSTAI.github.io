@@ -7,4 +7,6 @@ category:
   - 提示技术
 tag:
   - Prompt
+dir:
+  order: 2
 ---
