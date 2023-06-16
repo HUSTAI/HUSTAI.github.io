@@ -4,7 +4,7 @@ icon: pen-to-square
 date: 2023-06-12
 shortTitle: Goat
 category:
-  - 大语言模型
+  - 语言模型
 tag:
   - 推理
 star: true

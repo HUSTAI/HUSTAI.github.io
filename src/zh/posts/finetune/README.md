@@ -7,4 +7,6 @@ category:
   - 微调技术
 tag:
   - Finetune
+dir:
+  order: 3
 ---
