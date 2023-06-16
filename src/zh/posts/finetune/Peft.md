@@ -12,9 +12,6 @@ tag:
   - Prefix Tuning
   - P-Tuning
   - Prompt Tuning
-# star: true
-# editLink: false # 禁用编辑功能
-# sticky: 10
 ---
 
 # PEFT：最先进的参数高效微调方法
