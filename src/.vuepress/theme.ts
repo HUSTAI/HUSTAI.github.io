@@ -146,10 +146,12 @@ export default hopeTheme({
       gfm: true,
       imgLazyload: true,
       imgSize: true,
+      imgMark: true,
       include: true,
       katex: true,
       mark: true,
       mermaid: true,
+      footnote: true,
       playground: {
         presets: ["ts", "vue"],
       },
@@ -172,6 +174,26 @@ export default hopeTheme({
       tabs: true,
       vPre: true,
       vuePlayground: true,
+    },
+
+    components: {
+      // 你想使用的组件
+      components: [
+        "ArtPlayer",
+        "AudioPlayer",
+        "Badge",
+        "BiliBili",
+        "CodePen",
+        "PDF",
+        "Replit",
+        "Share",
+        "SiteInfo",
+        "StackBlitz",
+        // "VidStack",
+        "VideoPlayer",
+        "XiGua",
+        "YouTube",
+      ],
     },
 
     // uncomment these if you want a PWA
