@@ -9,7 +9,6 @@ tag:
   - 摘要
   - Transformer
   - 机器学习
-# sticky: 10
 ---
 
 # Unlimiformer 介绍
