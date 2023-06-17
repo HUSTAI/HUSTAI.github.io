@@ -1,0 +1,19 @@
+# Pull Request Labeler Github Action Configuration: https://github.com/marketplace/actions/labeler
+llm:
+  - src/zh/posts/llm/**
+  - src/.vuepress/public/assets/images/llm/**
+prompt:
+  - src/zh/posts/prompt/**
+  - src/.vuepress/public/assets/images/prompt/**
+finetune:
+  - src/zh/posts/finetune/**
+  - src/.vuepress/public/assets/images/finetune/**
+eval:
+  - src/zh/posts/eval/**
+  - src/.vuepress/public/assets/images/eval/**
+dataset:
+  - src/zh/posts/dataset/**
+  - src/.vuepress/public/assets/images/dataset/**
+token:
+  - src/zh/posts/token/**
+  - src/.vuepress/public/assets/images/token/**
