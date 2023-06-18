@@ -249,16 +249,16 @@ soft prompt比较依靠模型参数量，在参数量超过10B的模型上，效
 
 ## 4.参考文章
 
-[^LoRA]: [使用PEFT微调LLMs](https://zhuanlan.zhihu.com/p/623866920)
+1. [使用PEFT微调LLMs](https://zhuanlan.zhihu.com/p/623866920)
 
-[^Prefix Tuning]: [《Prefix-Tuning: Optimizing Continuous Prompts for Generation》阅读笔记](https://zhuanlan.zhihu.com/p/386073664)
+2. [《Prefix-Tuning: Optimizing Continuous Prompts for Generation》阅读笔记](https://zhuanlan.zhihu.com/p/386073664)
 
-[^Prefix Tuning]: [Prefix-Tunning](https://zhuanlan.zhihu.com/p/616960194)
+3. [Prefix-Tunning](https://zhuanlan.zhihu.com/p/616960194)
 
-[^P Tuning]: [【prompt】什么是 Soft Prompt 和 Hard Prompt ?](https://blog.csdn.net/qq_39328436/article/details/122643097)
+4. [【prompt】什么是 Soft Prompt 和 Hard Prompt ?](https://blog.csdn.net/qq_39328436/article/details/122643097)
 
-[^P Tuning]: [【调研】Soft Prompt Tuning 模型发展调研：P-tuning,Prefix-tuning,Prompt-tuning,P-tuning v2](https://blog.csdn.net/qq_39328436/article/details/122951888)
+5. [【调研】Soft Prompt Tuning 模型发展调研：P-tuning,Prefix-tuning,Prompt-tuning,P-tuning v2](https://blog.csdn.net/qq_39328436/article/details/122951888)
 
-[^P Tuning]: [prompt综述](https://arxiv.org/pdf/2107.13586.pdf)
+6. [prompt综述](https://arxiv.org/pdf/2107.13586.pdf)
 
-[^Prompt Tuning]: [Prompt范式第二阶段｜Prefix-tuning、P-tuning、Prompt-tuning](https://zhuanlan.zhihu.com/p/400790006)
+7. [Prompt范式第二阶段｜Prefix-tuning、P-tuning、Prompt-tuning](https://zhuanlan.zhihu.com/p/400790006)
