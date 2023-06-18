@@ -6,6 +6,7 @@ shortTitle: PEFT
 category:
   - 微调技术
 tag:
+  - PEFT
   - Hugging Face
   - LoRA
   - AdaLoRA
@@ -16,19 +17,21 @@ tag:
 
 # PEFT：最先进的参数高效微调方法
 
+参数高效微调 （PEFT） 方法能够将预训练的语言模型 （PLM） 有效地适应各种下游应用程序，而无需微调模型的所有参数。微调大型 PLM 的成本通常高得令人望而却步。在这方面，PEFT方法仅微调少量（额外）模型参数，从而大大降低了计算和存储成本。
+
+<!-- more -->
+
+代码地址：https://github.com/huggingface/peft
+
 ------
 
-## 1、PEFT定义
-
+## 1.PEFT定义
 
 PEFT，即参数高效微调 （Parameter-Efficient Fine-Tuning）技术，同时是Hugging Face开源的一个***高效微调大模型***的库。
 
-
 PEFT能够将预训练的语言模型 （PLM） 有效地适应各种下游应用程序，而无需微调模型的所有参数。在微调大型 PLM时，PEFT方法仅***微调少量（额外）模型参数***，从而大大降低了计算和存储成本。最近的PEFT技术实现了与完全微调相当的性能。
 
-<!-- more --> 
-
-## 2、PEFT分类
+## 2.PEFT分类
 
 Hugging Face开源的PEFT库目前支持5种方法，分别是：
 
@@ -82,8 +85,6 @@ LORA也是类似的思想，并且它不再局限于Embedding层，而是所有�
 
 根据论文的研究结果分析，**LoRA的微调质量与全模型微调相当**。
 
-
-
 ### 2.2 AdaLoRA
 
 AdaLoRA，即自适应预算分配以实现参数有效的微调，是微软与佐治亚理工学院共同提出的一种微调优化方法。
@@ -104,6 +105,9 @@ AdaLoRA包含两个重要组成部分：
 - 重要性感知秩分配，它根据我们新设计的重要性度量修剪冗余奇异值。
 
 %%奇异值：特征值的平方根%%
+::: tip
+奇异值：特征值的平方根
+:::
 
 论文提出了两种重要性度量的方式，分别是：
 - 基于奇异值的重要性度量
@@ -147,14 +151,14 @@ Prefix-Tuning将一系列**连续的task-specific向量**添加到input前面，
 
 ![](/assets/images/finetune/PEFT_06.png)
 
-%%作者提出了Prefix Tuning（底部），它冻结LM参数，并且只优化Prefix（红色前缀块）。因此，我们只需要为每个任务存储前缀，使前缀调优模块化并节省空间。
-注意，每个垂直块表示一个时间步长的变压器激活。%%
+Prefix-Tuning的作者提出了Prefix Tuning，该方法冻结LM参数，并且只优化Prefix（红色前缀块）。因此，只需要为每个任务存储前缀，使前缀调优模块化并节省空间。
 
 **与提示（prompt ）不同的是，前缀完全由自由参数组成，与真正的token不对应**。相比于传统的微调，前缀微调只优化了前缀。因此，我们只需要存储一个大型Transformer和已知任务特定前缀的副本，对每个额外任务产生非常小的开销。
 
 原论文仅在以下任务中进行了比较：
--   table-to-text生成任务：GPT-2
--   生成式摘要任务：BART
+
+- table-to-text生成任务：GPT-2
+- 生成式摘要任务：BART
 
 ***Prefix-tuning的prompt拼接方式***
 
@@ -164,9 +168,9 @@ Prefix-tuning是做生成任务，它根据不同的模型结构定义了不同�
 
 值得注意的还有三个改动：
 
-1.  **把预训练大模型freeze住**，因为大模型参数量大，精调起来效率低，毕竟prompt的出现就是要解决大模型少样本的适配
-2.  作者发现直接优化Prompt参数不太稳定，加了个更大的MLP，训练完只保存MLP变换后的参数就行了
-3.  实验证实只加到embedding上的效果不太好，因此作者在每层都加了prompt的参数，改动较大
+- **把预训练大模型freeze住**，因为大模型参数量大，精调起来效率低，毕竟prompt的出现就是要解决大模型少样本的适配；
+- 作者发现直接优化Prompt参数不太稳定，加了个更大的MLP，训练完只保存MLP变换后的参数就行了；
+- 实验证实只加到embedding上的效果不太好，因此作者在每层都加了prompt的参数，改动较大。
 
 
 ### 2.5 Prompt Tuning
@@ -236,14 +240,14 @@ soft prompt比较依靠模型参数量，在参数量超过10B的模型上，效
 方法：prefix-tuning仅在transformer的 第一层加入soft prompt，p tuning v2 提出 Deep Prompt Tuning的方法，在transformer 的每一层之前都加入了soft prompt。
 
 
-## 3、实验结果
+## 3.实验结果
 
 ![](/assets/images/finetune/PEFT_12.png)
 
 根据[结果](https://zhuanlan.zhihu.com/p/623866920)可以看出，在只训练1个epoch的情况下，只有LoRA与AdaLoRA的效果接近全参数微调，并且LoRA与全参数微调的差距不超过0.1%
 
 
-## 4、参考文章
+## 4.参考文章
 
 
 ### LoRA
