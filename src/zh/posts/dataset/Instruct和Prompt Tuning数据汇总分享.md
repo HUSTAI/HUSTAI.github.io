@@ -38,7 +38,6 @@ tag:
 ## 1 Super-Natural Instruction 【Allen AI】
 
 这些自然语言指令清楚而完整地描述了一项任务（传统上定义为将输入字符串映射到输出字符串）。配备“理解”语言说明的模型，如果提供了任务说明，应该可以成功解决任何看不见的任务。
-项目链接：[https://instructions.apps.allenai.org]([https://instructions.apps.allenai.org)
 
 ## 2 PromptSource【BigScience】
 
