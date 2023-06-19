@@ -25,25 +25,25 @@ tag:
 
 ------
 
-## 1.PEFT定义
+## 1 PEFT定义
 
 PEFT，即参数高效微调 （Parameter-Efficient Fine-Tuning）技术，同时是Hugging Face开源的一个***高效微调大模型***的库。
 
 PEFT能够将预训练的语言模型 （PLM） 有效地适应各种下游应用程序，而无需微调模型的所有参数。在微调大型 PLM时，PEFT方法仅***微调少量（额外）模型参数***，从而大大降低了计算和存储成本。最近的PEFT技术实现了与完全微调相当的性能。
 
-## 2.PEFT分类
+## 2 PEFT分类
 
 Hugging Face开源的PEFT库目前支持5种方法，分别是：
 
-- **LoRA**: [LoRA: Low-Rank Adaptation of Large Language Models(微软，2021年10月)](https://arxiv.org/abs/2106.09685)
+（1）**LoRA**: [LoRA: Low-Rank Adaptation of Large Language Models(微软，2021年10月)](https://arxiv.org/abs/2106.09685)
 
-- **AdaLoRA**: [Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning(微软，2023年3月)](https://arxiv.org/abs/2303.10512)
+（2）**AdaLoRA**: [Adaptive Budget Allocation for Parameter-Efficient Fine-Tuning(微软，2023年3月)](https://arxiv.org/abs/2303.10512)
 
-- **Prefix Tuning**: [Prefix-Tuning: Optimizing Continuous Prompts for Generation(斯坦福，2021年8月)](https://aclanthology.org/2021.acl-long.353/); [P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks(清华KEG，2022年3月20)](https://arxiv.org/abs/2110.07602) Prefix Tuning在input前面加入prefix部分，并针对拥有自由参数的prefix部分进行微调训练
+（3）**Prefix Tuning**: [Prefix-Tuning: Optimizing Continuous Prompts for Generation(斯坦福，2021年8月)](https://aclanthology.org/2021.acl-long.353/)；[P-Tuning v2: Prompt Tuning Can Be Comparable to Fine-tuning Universally Across Scales and Tasks(清华KEG，2022年3月20)](https://arxiv.org/abs/2110.07602)；Prefix Tuning在input前面加入prefix部分，并针对拥有自由参数的prefix部分进行微调训练
 
-- **P-Tuning**: [GPT Understands, Too(清华，北京智源，2021年3月18)](https://arxiv.org/abs/2103.10385) P-Tuning将prompt对应的token替换为可训练的嵌入，并进行微调训练
+（4）**P-Tuning**: [GPT Understands, Too(清华，北京智源，2021年3月18)](https://arxiv.org/abs/2103.10385)；P-Tuning将prompt对应的token替换为可训练的嵌入，并进行微调训练
 
-- **Prompt Tuning**: [The Power of Scale for Parameter-Efficient Prompt Tuning(谷歌，2021年9月)](https://arxiv.org/abs/2104.08691) Prompt Tuning针对每一类任务，训练出任务对应prompt的embedding向量
+（5）**Prompt Tuning**: [The Power of Scale for Parameter-Efficient Prompt Tuning(谷歌，2021年9月)](https://arxiv.org/abs/2104.08691)；Prompt Tuning针对每一类任务，训练出任务对应prompt的embedding向量
 
 其中，Prefix Tuning、P-Tuning、Prompt Tuning可理解为针对prompt部分的微调。
 
@@ -101,17 +101,20 @@ AdaLoRA，即自适应预算分配以实现参数有效的微调，是微软与�
 ![](/assets/images/finetune/PEFT_04.png)
 
 AdaLoRA包含两个重要组成部分：
-- 基于SVD的自适应，它以奇异值分解的形式表示增量矩阵∆；
-- 重要性感知秩分配，它根据我们新设计的重要性度量修剪冗余奇异值。
 
-%%奇异值：特征值的平方根%%
+（1）基于SVD的自适应，它以奇异值分解的形式表示增量矩阵∆；
+
+（2）重要性感知秩分配，它根据我们新设计的重要性度量修剪冗余奇异值。
+
 ::: tip
 奇异值：特征值的平方根
 :::
 
 论文提出了两种重要性度量的方式，分别是：
-- 基于奇异值的重要性度量
-- 基于敏感性的重要性度量
+
+（1）基于奇异值的重要性度量
+
+（2）基于敏感性的重要性度量
 
 在AdaLoRA中，以奇异值分解的形式对权重矩阵的增量更新进行参数化。然后，根据新的重要性指标，通过操纵奇异值，在增量矩阵之间动态地分配参数预算。这种方法可以有效地提高模型性能和参数效率。
 
@@ -132,8 +135,11 @@ AdaLoRA根据重要性评分自适应地分配参数预算，通过**对权重�
 
 ### 2.3 prompt分类
 
-- **hard prompt** 又称为 Discrete Prompt，离散prompt是一个实际的文本字符串
-- **soft prompt** 又称为 Continuous Prompts，连续prompt直接在底层语言模型的嵌入空间中进行描述
+prompt分为**hard prompt**与**soft prompt**两种，这两种prompt的含义如下。
+
+（1）**hard prompt** 又称为 Discrete Prompt，离散prompt是一个实际的文本字符串
+
+（2）**soft prompt** 又称为 Continuous Prompts，连续prompt直接在底层语言模型的嵌入空间中进行描述
 
 prompt的制作分为手工创建prompt和自动化生成prompt，而自动化生成prompt又分为离散提示（又叫做硬提示）和连续提示（又叫做软提示）
 
@@ -157,8 +163,9 @@ Prefix-Tuning的作者提出了Prefix Tuning，该方法冻结LM参数，并且�
 
 原论文仅在以下任务中进行了比较：
 
-- table-to-text生成任务：GPT-2
-- 生成式摘要任务：BART
+（1）table-to-text生成任务：GPT-2
+
+（2）生成式摘要任务：BART
 
 ***Prefix-tuning的prompt拼接方式***
 
@@ -168,10 +175,11 @@ Prefix-tuning是做生成任务，它根据不同的模型结构定义了不同�
 
 值得注意的还有三个改动：
 
-- **把预训练大模型freeze住**，因为大模型参数量大，精调起来效率低，毕竟prompt的出现就是要解决大模型少样本的适配；
-- 作者发现直接优化Prompt参数不太稳定，加了个更大的MLP，训练完只保存MLP变换后的参数就行了；
-- 实验证实只加到embedding上的效果不太好，因此作者在每层都加了prompt的参数，改动较大。
+（1）**把预训练大模型freeze住**，因为大模型参数量大，精调起来效率低，毕竟prompt的出现就是要解决大模型少样本的适配；
 
+（2）作者发现直接优化Prompt参数不太稳定，加了个更大的MLP，训练完只保存MLP变换后的参数就行了；
+
+（3）实验证实只加到embedding上的效果不太好，因此作者在每层都加了prompt的参数，改动较大。
 
 ### 2.5 Prompt Tuning
 
@@ -186,8 +194,6 @@ Prompt-tuning给每个任务定义了自己的**Prompt，拼接到数据上作�
 ![](https://pic4.zhimg.com/80/v2-105188e34a31c728a473011260f266e7_720w.webp)
 
 同时，Prompt-tuning还提出了Prompt-ensembling，也就是在一个batch里同时训练同一个任务的不同prompt，这样相当于训练了不同「模型」，比模型集成的成本小多了。
-
-
 
 ### 2.6 P-Tuning
 
@@ -240,25 +246,25 @@ soft prompt比较依靠模型参数量，在参数量超过10B的模型上，效
 方法：prefix-tuning仅在transformer的 第一层加入soft prompt，p tuning v2 提出 Deep Prompt Tuning的方法，在transformer 的每一层之前都加入了soft prompt。
 
 
-## 3.实验结果
+## 3 实验结果
 
 ![](/assets/images/finetune/PEFT_12.png)
 
 根据[结果](https://zhuanlan.zhihu.com/p/623866920)可以看出，在只训练1个epoch的情况下，只有LoRA与AdaLoRA的效果接近全参数微调，并且LoRA与全参数微调的差距不超过0.1%
 
 
-## 4.参考文章
+## 4 参考文章
 
-1. [使用PEFT微调LLMs](https://zhuanlan.zhihu.com/p/623866920)
+[1] [使用PEFT微调LLMs](https://zhuanlan.zhihu.com/p/623866920)
 
-2. [《Prefix-Tuning: Optimizing Continuous Prompts for Generation》阅读笔记](https://zhuanlan.zhihu.com/p/386073664)
+[2] [《Prefix-Tuning: Optimizing Continuous Prompts for Generation》阅读笔记](https://zhuanlan.zhihu.com/p/386073664)
 
-3. [Prefix-Tunning](https://zhuanlan.zhihu.com/p/616960194)
+[3] [Prefix-Tunning](https://zhuanlan.zhihu.com/p/616960194)
 
-4. [【prompt】什么是 Soft Prompt 和 Hard Prompt ?](https://blog.csdn.net/qq_39328436/article/details/122643097)
+[4] [【prompt】什么是 Soft Prompt 和 Hard Prompt ?](https://blog.csdn.net/qq_39328436/article/details/122643097)
 
-5. [【调研】Soft Prompt Tuning 模型发展调研：P-tuning,Prefix-tuning,Prompt-tuning,P-tuning v2](https://blog.csdn.net/qq_39328436/article/details/122951888)
+[5] [【调研】Soft Prompt Tuning 模型发展调研：P-tuning,Prefix-tuning,Prompt-tuning,P-tuning v2](https://blog.csdn.net/qq_39328436/article/details/122951888)
 
-6. [prompt综述](https://arxiv.org/pdf/2107.13586.pdf)
+[6] [prompt综述](https://arxiv.org/pdf/2107.13586.pdf)
 
-7. [Prompt范式第二阶段｜Prefix-tuning、P-tuning、Prompt-tuning](https://zhuanlan.zhihu.com/p/400790006)
+[7] [Prompt范式第二阶段｜Prefix-tuning、P-tuning、Prompt-tuning](https://zhuanlan.zhihu.com/p/400790006)
