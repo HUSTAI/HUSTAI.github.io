@@ -2,25 +2,25 @@
 author: 猞猁-zlj
 icon: pen-to-square
 date: 2023-03-01
-title: chatgpt相关技术介绍
+title: ChatGPT相关技术介绍
 category:
   - 语言模型
 tag:
-  - openai
-  - google
+  - OpenAI
+  - Google
   - instruction tuning
   - in-context learning
-  - chatgpt
+  - ChatGPT
 ---
 
-- gpt系列模型发展历程
+- GPT系列模型发展历程
 - 提示微调
 - 上下文学习
 
 <!-- more -->
 
-## 1 gpt系列模型发展历程
-![图1 gpt系列模型树](/assets/images/llm/chatgpt1.png "图1 gpt系列模型树")
+## 1 GPT系列模型发展历程
+![图1 GPT系列模型树](/assets/images/llm/chatgpt1.png "图1 gpt系列模型树")
 ## 2 提示微调 instruction tuning[^instruction]
 该概念的提出来自于Google的一篇论文. 提示微调结合了pretrain-finetune和prompt两个范式的优点，即用prompt格式的训练数据进行fine-tune，以使模型具备人类倾向的回答问题能力。
 提示微调结合了pretrain-finetune和prompt两个范式的优点，即用prompt格式的训练数据进行fine-tune，以使模型具备人类倾向的回答问题能力。
