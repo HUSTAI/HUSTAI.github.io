@@ -96,7 +96,7 @@ export default hopeTheme({
       // sidebar
       sidebar: zhSidebar,
 
-      footer: "默认页脚",
+      footer: "分享知识-分享快乐",
 
       displayFooter: true,
 
