@@ -17,24 +17,7 @@ tag:
 
 <!-- more -->
 
-## 1 数据集简介
-
-| 数据集/项目名称                                 | 组织/作者     | 简介                                                         |
-| ----------------------------------------------- | ------------- | ------------------------------------------------------------ |
-| Natural Instruction / Super-Natural Instruction | Allen AI      | 包含61个NLP任务（Natural Instruction）和1600个NLP任务（Super-Natural Instruction）的指令数据 |
-| PromptSource / P3                               | BigScience    | 包含270个NLP任务的2000多个prompt模版（PromptSource）和规模在100M-1B之间的P3数据集 |
-| xMTF                                            | BigScience    | 包含13个NLP任务、46种语言的多语言prompt数据                  |
-| HH-RLHF                                         | Anthropic     | 旨在训练Helpful and Harmless（HH）的LLMs的RLHF数据集         |
-| Unnatural Instruction                           | orhonovich    | 使用GPT3生成64k的instruction prompt数据，经改写后得到240k条instruction数据 |
-| Self-Instruct                                   | yizhongw      | 使用LLMs生成prompt进行instruct-tuning的方法，引入Task pool和Quality filtering等概念 |
-| UnifiedSKG                                      | HKU           | 在Text-to-Text框架中加入knowledge grounding，将结构化数据序列化并嵌入到prompt中 |
-| Flan Collection                                 | Google        | 将Flan 2021数据与一些开源的instruction数据（P3，super-natural instruction等）进行合并 |
-| InstructDial                                    | prakharguptaz | 在特定的一种任务类型（对话指令）上进行指令微调的尝试         |
-| Alpaca                                          | Stanford      | 53k 数据, 非常优秀的表现(GPT-3.5 level).                     |
-
-
-
-## 2 各数据集总结
+## 1 各数据集概述
 （1） Super-Natural Instruction 【Allen AI】
 
 这些自然语言指令清楚而完整地描述了一项任务（传统上定义为将输入字符串映射到输出字符串）。配备“理解”语言说明的模型，如果提供了任务说明，应该可以成功解决任何看不见的任务。
@@ -99,7 +82,24 @@ Google 在这个项目中将自己的 Flan 2021 数据与一些开源的 instruc
 项目链接：https://github.com/prakharguptaz/Instructdial/tree/main/datasets
 InstructDial 是在特定的一种任务类型上进行指令微调的尝试。实验结果表明，在对话指令数据上微调后，模型在对话任务上的表现强于在超大规模任务集上的结果
 
+为方便读者阅读，上述数据集可以总结概括为以下表格
 
+:::: 指令数据集和提示数据集汇总表格
+
+| 数据集/项目名称                                 | 组织/作者     | 简介                                                         |
+| ----------------------------------------------- | ------------- | ------------------------------------------------------------ |
+| Natural Instruction / Super-Natural Instruction | Allen AI      | 包含61个NLP任务（Natural Instruction）和1600个NLP任务（Super-Natural Instruction）的指令数据 |
+| PromptSource / P3                               | BigScience    | 包含270个NLP任务的2000多个prompt模版（PromptSource）和规模在100M-1B之间的P3数据集 |
+| xMTF                                            | BigScience    | 包含13个NLP任务、46种语言的多语言prompt数据                  |
+| HH-RLHF                                         | Anthropic     | 旨在训练Helpful and Harmless（HH）的LLMs的RLHF数据集         |
+| Unnatural Instruction                           | orhonovich    | 使用GPT3生成64k的instruction prompt数据，经改写后得到240k条instruction数据 |
+| Self-Instruct                                   | yizhongw      | 使用LLMs生成prompt进行instruct-tuning的方法，引入Task pool和Quality filtering等概念 |
+| UnifiedSKG                                      | HKU           | 在Text-to-Text框架中加入knowledge grounding，将结构化数据序列化并嵌入到prompt中 |
+| Flan Collection                                 | Google        | 将Flan 2021数据与一些开源的instruction数据（P3，super-natural instruction等）进行合并 |
+| InstructDial                                    | prakharguptaz | 在特定的一种任务类型（对话指令）上进行指令微调的尝试         |
+| Alpaca                                          | Stanford      | 53k 数据, 非常优秀的表现(GPT-3.5 level).                     |
+
+::::
 
 **[阅读原文](https://zhuanlan.zhihu.com/p/615277009)**
 
