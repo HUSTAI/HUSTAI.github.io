@@ -84,8 +84,6 @@ InstructDial 是在特定的一种任务类型上进行指令微调的尝试。�
 
 为方便读者阅读，上述数据集可以总结概括为以下表格
 
-:::: 指令数据集和提示数据集汇总表格
-
 | 数据集/项目名称                                 | 组织/作者     | 简介                                                         |
 | ----------------------------------------------- | ------------- | ------------------------------------------------------------ |
 | Natural Instruction / Super-Natural Instruction | Allen AI      | 包含61个NLP任务（Natural Instruction）和1600个NLP任务（Super-Natural Instruction）的指令数据 |
@@ -99,7 +97,6 @@ InstructDial 是在特定的一种任务类型上进行指令微调的尝试。�
 | InstructDial                                    | prakharguptaz | 在特定的一种任务类型（对话指令）上进行指令微调的尝试         |
 | Alpaca                                          | Stanford      | 53k 数据, 非常优秀的表现(GPT-3.5 level).                     |
 
-::::
 
 **[阅读原文](https://zhuanlan.zhihu.com/p/615277009)**
 
