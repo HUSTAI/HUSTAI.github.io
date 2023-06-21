@@ -2,7 +2,7 @@
 author: lx
 icon: pen-to-square
 date: 2023-06-05
-shortTitle: PEARL
+shortTitle: "PEARL: 长文档推理提示"
 category:
   - 语言模型
 tag:
