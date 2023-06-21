@@ -2,7 +2,7 @@
 author: 最后的开神-wkyc
 icon: pen-to-square
 date: 2023-06-15
-shortTitle: GPT
+shortTitle: GPT论文分享
 category:
   - 语言模型
 tag:
