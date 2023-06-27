@@ -707,6 +707,6 @@ output = ACTION (arg1, arg2, ...)，
 
 ## 4 参考
 
-[^paper]: [一个专用于长文档推理的提示框架PEARL，性能比GPT-4高10.5%！](http://1v9.xyz/29Krfm)
+[^paper]: [一个专用于长文档推理的提示框架PEARL，性能比GPT-4高10.5%！](https://mp.weixin.qq.com/s/dQhRiH62Mz9umx7GFeQRvw)
 
 [^quality]: [QuALITY数据集](https://paperswithcode.com/paper/quality-question-answering-with-long-input)
