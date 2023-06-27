@@ -2,7 +2,7 @@
 author: 研究生鱼皮-yjf
 icon: pen-to-square
 date: 2023-06-14
-shortTitle: Unlimiformer
+shortTitle: Unlimiformer介绍
 category:
   - 语言模型
 tag:

@@ -14,10 +14,7 @@ tag:
 
 # 大幅优化推理速度-ByteTransformer
 
-本文贡献：
-- 设计和开发了ByteTransformer，这是一种针对**可变长度输入**优化的高性能 GPU加速transformer。
-- 提出了一种**padding-free**算法，将输入张量与可变长度序列打包，并计算所有变换器操作的定位偏移向量以进行索引，从而使整个变换器管道免于填充和计算零令牌
-- 提出了一个**融合的多头注意力**来降低中间矩阵的内存开销，中间矩阵是序列长度的二次方。
+论文提出了字节跳动的GPU Transformer推理库——ByteTransformer。针对自然语言处理常见的**可变长输入**，论文提出了一套优化算法，这些算法在保证运算正确性的前提下，成功避免了传统实现中的冗余运算，实现了端到端的推理过程的大幅优化。
 
 <!-- more -->
 
@@ -29,7 +26,7 @@ tag:
 
 ## 1 介绍
 
-现有的一些深度学习框架，如Tensorflow，PyTorch，TVM以及NVIDIA TensorRT等，要求输入序列长度相同，才能利用批处理加速Transformer计算。然而，在实际场景中，输入序列通常是变长的，而零填充会引入大量的额外计算开销。字节跳动AML团队先前提出的“effective Transformer”[^effective]，通过对输入的重排列，实现了 QKV projection 和 MLP 的 padding free，但 self attention 部分仍然需要 padding。
+现有的一些深度学习框架，如Tensorflow，PyTorch，TVM以及NVIDIA TensorRT等，要求输入序列长度相同，才能利用批处理加速Transformer计算。然而，在实际场景中，输入序列通常是变长的，而零填充会引入大量的额外计算开销。字节跳动AML团队先前提出的“effective Transformer”，通过对输入的重排列，实现了 QKV projection 和 MLP 的 padding free，但 self attention 部分仍然需要 padding。
 为了解决这个问题，字节跳动 AML 团队提出了 ByteTransformer，它实现了变长输入的 padding free 计算，并且实现了全面的 kernel fusion 以进一步提高性能。
 
 ## 2 优化算法
@@ -47,14 +44,14 @@ tag:
 （2）根据 offsets 把输入张量从 [batch_size, seqlen, hidden_size] 重排列为 [valid_seqlen, hidden_size] ，再参与后续的矩阵乘计算，实现 padding free。
 
 
-### 2.2 融合的多头注意力FMHA (Fused Multi-Head Attention)
+### 2.2 融合的多头注意力
 旧版的多头注意力：多头注意力 (Multi-Head)，具体是在计算时对注意力做一些变形，每个输入产生多组 Q、K、V（生成几组就是几个头），每组各自计算互不影响，最后把输出拼接在一起作为总输出（可能要再乘一个矩阵来调整形状）。
 
-为了优化 attention 部分的性能，ByteTransformer 中实现了 fused multi-head attention 算子。对于 seqlen 长度，以 384 为界划分为两种实现方式。
+为了优化 attention 部分的性能，ByteTransformer 中实现了融合的多头注意力（Fused Multi-Head Attention）算子。对于 seqlen 长度，以 384 为界划分为两种实现方式。
 
 （1）对于短 seqlen, 因为可以把 QK 整行放在共享内存进行 softmax 操作，通过手写 kernel 的方式实现，矩阵乘通过调用 wmma 接口使用 TensorCore 保证高性能。
 
-（2）对于长 seqlen, 因为共享内存大小限制，不能在一个手写 kernel 中完成所有操作。基于高性能的 CUTLASS[^cutlass]  grouped GEMM, 分成两个 gemm kernel 实现，并把 add_bias, softmax 等操作 fused 到 GEMM kernel 中。
+（2）对于长 seqlen, 因为共享内存大小限制，不能在一个手写 kernel 中完成所有操作。基于高性能的 CUTLASS  grouped GEMM, 分成两个 gemm kernel 实现，并把 add_bias, softmax 等操作 fused 到 GEMM kernel 中。
 
 ### 2.3 CUTLASS grouped GEMM
 
@@ -83,11 +80,4 @@ grouped GEMM 原理：kernel 中每个 threadblock (CTA) 固定分块大小，�
 
 目前，字节跳动 AML 团队已经在 GitHub 上开源了 ByteTransformer 的标准 BERT 实现。除此之外，字节内部版本还支持了许多 Transformer 变种，比如 Deberta, Roformer，T5 等等。代码实现易于拓展，并且上述各种优化手段也可以方便地应用到变种 Transformer 中。
 
-
-
-## 4 参考
-
-[^effective]: ByteDance https://github.com/bytedance/effective_transformer
-
-[^cutlass]: NVIDIA https://github.com/NVIDIA/cutlass
 
