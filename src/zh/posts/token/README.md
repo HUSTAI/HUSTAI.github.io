@@ -1,5 +1,5 @@
 ---
-title: token
+title: Token
 icon: puzzle-piece
 index: false
 article: false
