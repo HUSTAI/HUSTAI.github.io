@@ -19,6 +19,8 @@ tag:
 
 ## 1 GPT系列模型发展历程
 
+<!-- todo 介绍模型树 -->
+
 ![图1 GPT系列模型树](/assets/images/llm/chatgpt1.png "图1 gpt系列模型树")
 
 
