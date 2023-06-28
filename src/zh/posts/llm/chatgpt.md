@@ -68,7 +68,7 @@ ICL是一个元优化的过程，可以看做隐性微调。GPT首先根据演�
 
 ## 5 参考
 
-[1] Jason Wei, Maarten Bosma, Vincent Y. Zhao, Kelvin Guu, Adams Wei Yu, Brian Lester, et al. Finetuned language models are zero-shot learners. In: International conference on learning representations, 2022
+[1] Jason Wei, Maarten Bosma, Vincent Y. Zhao, Kelvin Guu, Adams Wei Yu, Brian Lester, et al. Finetuned language models are zero-shot learners. In: Proceedings of the 10th International Conference on Learning Representations, Online, April 25-29, 2022, OpenReview.net, 2022: 1-46
 
 
 [2] Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, et al. Training language models to follow instructions with human feedback. In: Advances in neural information processing systems: 35, Curran Associates, Inc., 2022: 27730-27744
@@ -76,6 +76,4 @@ ICL是一个元优化的过程，可以看做隐性微调。GPT首先根据演�
 
 [3] Damai Dai, Yutao Sun, Li Dong, Yaru Hao, Shuming Ma, Zhifang Sui, et al. Why Can GPT Learn In-Context? Language Models Implicitly Perform Gradient Descent as Meta-Optimizers. arXiv, 2023
 
-[4] 詹向红，李德新. 中医药防治阿尔茨海默病实验研究述要. 中华中医药学刊，2004, 22(11): 2094-2096
-
-[5] 毛峡．绘画的音乐表现．见：中国人工智能学会，北京，2001，北京邮电大学出版社，2001：739—740
+[4] Suli Yang, Jing Liu, Andrea C. Arpaci-Dusseau, Remzi H. Arpaci-Dusseau. Principled Schedulability Analysis for Distributed Storage Systems using Thread Architecture Models. In: Proceedings of the 13th USENIX Symposium on Operating Systems Design and Implementation (OSDI 2018), Carlsbad, CA, USA, October 8-10, 2018, USENIX Association, 2018: 161-176
