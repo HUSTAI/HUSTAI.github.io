@@ -32,7 +32,7 @@ projects:
     link: /zh/category/数据集/
 
   - icon: puzzle-piece
-    name: token
+    name: Token
     link: /zh/category/token/
 
 footer: 分享知识-分享快乐
