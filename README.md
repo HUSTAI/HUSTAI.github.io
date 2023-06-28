@@ -30,6 +30,16 @@
 ![alt name](/assets/images/${category}/image.xxx "image title")
 ```
 
+## 添加公式
+单个$符代表行内公式，两个$符代表行外居中公式。
+添加\tag标签为公式添加序号。
+```plain
+$$
+f(x)=2x^2
+\tag {1.2}
+$$
+```
+
 ## 添加参考文献
 
 1. 添加锚点
