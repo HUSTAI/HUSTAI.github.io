@@ -68,6 +68,7 @@ ICL是一个元优化的过程，可以看做隐性微调。GPT首先根据演�
 
 ## 5 参考
 
+
 [1] Jason Wei, Maarten Bosma, Vincent Y. Zhao, Kelvin Guu, Adams Wei Yu, Brian Lester, et al. Finetuned language models are zero-shot learners. In: Proceedings of the 10th International Conference on Learning Representations (ICLR 2022), Online, April 25-29, 2022, OpenReview.net, 2022: 1-46
 
 [2] Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, et al. Training language models to follow instructions with human feedback. In: Advances in Neural Information Processing Systems 35 (NeurIPS 2022), New Orleans, Louisiana, USA, November 28-December 9, 2022, MIT Press, 2022: 27730-27744

@@ -26,9 +26,9 @@ tag:
 
 ## 1 背景介绍
 
-现实中的语料错综复杂，通常需要在较长的上下文中推理得到最后的结果，该文[^paper]任务在长篇文本中进行复杂的推理通常需要形成**文本的高级抽象**（例如，对文档叙事中的情节和主题进行摘要和抽象），并在这些抽象之上进行各种推理。
+现实中的语料错综复杂，通常需要在较长的上下文中推理得到最后的结果，该文 ^\[1\]^ 任务在长篇文本中进行复杂的推理通常需要形成**文本的高级抽象**（例如，对文档叙事中的情节和主题进行摘要和抽象），并在这些抽象之上进行各种推理。
 
-让我们来考虑`QuaLITY`数据集[^quality] 中关于 `Breakaway` 的问题：“在结尾中哪些句子与开场句子相对应？”。
+让我们来考虑`QuaLITY`数据集 ^\[2\]^ 中关于 `Breakaway` 的问题：“在结尾中哪些句子与开场句子相对应？”。
 
 为了回答上述问题，需要从整个故事中收集、评估和整合信息，解决问题的思路可以拆解为以下的几个步骤。
 
@@ -651,13 +651,13 @@ tag:
 
 `PEARL` 框架主要包括三个阶段：**行动挖掘**，**计划构建**和**计划执行**（如图1所示）。具体而言，给定一个关于长文档的问题，`PEARL` 会将问题分解为一系列操作 `SUMMARIZE`，`FIND_EVENT`，`FIND_RELATION` 等一系列奥做，然后在文档上粉笔执行原子操作以获得答案。其中，`PEARL` 的每个阶段都是通过 `Zero-shot` 或 `Few-shot` 的 `LLM` 提示实现的。
 
-![图1 PEARL框架](/assets/images/llm/pearl-1.png "图1 PEARL框架")
+![图2.1 PEARL框架](/assets/images/llm/pearl-1.png "图2.1 PEARL框架")
 
 ### 2.1 动作挖掘
 
 `PEARL` 直接从**相似分布**的数据中进行动作挖掘（该文训练集问题为 QuALITY）。学习特定于数据集的操作使 `PEARL` 能够扩展到不同的领域和任务，因为用户查询在复杂性方面可能有很大差异。此外，从训练集中挖掘动作可以减少人们在新动作设计上的工作量，在该文中，将**动作**定义为长文档推理的基本单元。
 
-![图2 动作挖掘](/assets/images/llm/pearl-2.png "图2 动作挖掘")
+![图2.2 动作挖掘](/assets/images/llm/pearl-2.png "图2.2 动作挖掘" =500x)
 
 为了获得所有的原子动作，首先手动创建一小组**种子动作**以用作演示，如图2所示。给出一个示例问题，将其与种子动作和指令一起提供给 `LLM`，以生成更多任务特定的动作。每个 `ACTION` 都被格式化为带有输入参数的编程函数，然后是模型生成的自然语言函数定义。以下是 `LLM` 生成的操作示例，在对训练数据中的示例问题进行完整遍历后，我们获得了一组最终的动作及其相应的定义，然后将其合并到下一阶段的提示中。
 
@@ -678,7 +678,7 @@ output = ACTION (arg1, arg2, ...)，
 
 在上一阶段，`LLM`生成了一个计划，作为生成响应的模板。为了执行计划中的每个步骤，用模板提示 `LLM`，该模板填充了先前阶段的输出，如图3所示。
 
-![图3 计划执行](/assets/images/llm/pearl-3.png "图3 计划执行")
+![图2.3 计划执行](/assets/images/llm/pearl-3.png "图2.3 计划执行" =500x)
 
 为了执行 `FIND_BEHAVIOR_REASON` 操作，模型在提示模板中依次执行以下步骤。
 
@@ -698,15 +698,15 @@ output = ACTION (arg1, arg2, ...)，
 
 `PEARL` 在需要对**长文本进行推理的问题上明显优于其他竞争的提示方法**，这表明了规划模块的实用性。
 
-![图4 实验结果](/assets/images/llm/pearl-4.png "图4 实验结果")
+![图3.1 实验结果](/assets/images/llm/pearl-4.png "图3.1 实验结果" =500x)
 
 在 `Longer` 上下文关联情况下，与 `Zero-shot GPT-4` 基线相比，`PEARL` 的表现有了显著改善（$72.4\text{％} \ vs\ 61.9\text{％}$）。该方法在短拆分上的表现不好，可能是由于“过度思考”这些更简单的问题以及计划执行步骤中的错误传播所致。
 
-![图5 上下文长度影响](/assets/images/llm/pearl-5.png "图5 上下文长度影响")
+![图3.2 上下文长度影响](/assets/images/llm/pearl-5.png "图3.2 上下文长度影响" =500x)
 
 
 ## 4 参考
 
-[^paper]: [一个专用于长文档推理的提示框架PEARL，性能比GPT-4高10.5%！](https://mp.weixin.qq.com/s/dQhRiH62Mz9umx7GFeQRvw)
+[1] [一个专用于长文档推理的提示框架PEARL，性能比GPT-4高10.5%！](https://mp.weixin.qq.com/s/dQhRiH62Mz9umx7GFeQRvw)
 
-[^quality]: [QuALITY数据集](https://paperswithcode.com/paper/quality-question-answering-with-long-input)
+[2] [QuALITY数据集](https://paperswithcode.com/paper/quality-question-answering-with-long-input)
