@@ -67,9 +67,9 @@ ICL是一个元优化的过程，可以看做隐性微调。GPT首先根据演�
 > ICL只对attention有影响。
 
 ## 5 参考
-[1] J. Wei, M. Bosma, V. Zhao, K. Guu, A. W. Yu, B. Lester, et al. Finetuned language models are zero-shot learners. In: International conference on learning representations, 2022
+[1] Jason Wei, Maarten Bosma, Vincent Y. Zhao, Kelvin Guu, Adams Wei Yu, Brian Lester, et al. Finetuned language models are zero-shot learners. In: International conference on learning representations, 2022
 
-[2]	L. Ouyang, J. Wu, X. Jiang, D. Almeida, C. Wainwright, P. Mishkin, et al. Training language models to follow instructions with human feedback. In: Advances in neural information processing systems: 35, Curran Associates, Inc., 2022: 27730-27744
+[2]	Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, et al. Training language models to follow instructions with human feedback. In: Advances in neural information processing systems: 35, Curran Associates, Inc., 2022: 27730-27744
 
 
-[3] D. Dai, Y. Sun, L. Dong, Y. Hao, S. Ma, Z. Sui, et al. Why Can GPT Learn In-Context? Language Models Implicitly Perform Gradient Descent as Meta-Optimizers. arXiv, 2023
+[3] Damai Dai, Yutao Sun, Li Dong, Yaru Hao, Shuming Ma, Zhifang Sui, et al. Why Can GPT Learn In-Context? Language Models Implicitly Perform Gradient Descent as Meta-Optimizers. arXiv, 2023
