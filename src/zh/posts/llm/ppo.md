@@ -17,9 +17,9 @@ PPO（Proximal Policy Optimization）是一种策略梯度优化算法，它对�
 ## 1 策略梯度算法
 策略梯度算法带来了原始算法和总体框架，它告诉我们只要以奖励的期望式1.1为优化目标，通过采样足够多的样本来用均值估算数学期望，再用这个估算值对分布做梯度上升求式1.1的极大值，就可以优化我们所要优化的分布$\theta$。
 
-$
+$$
 R_\theta=E_{\tau\sim{p_\theta(\tau)}}R(\tau)=\sum\limits_{\tau}[R(\tau)p_\theta(\tau)]
-$（1.1）
+$$（1.1）
 
 $
 \begin{aligned}
