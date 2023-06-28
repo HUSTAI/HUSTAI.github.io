@@ -22,11 +22,13 @@ R_\theta=E_{\tau\sim{p_\theta(\tau)}}R(\tau)=\sum\limits_{\tau}[R(\tau)p_\theta(
 $（1.1）
 
 $
+\begin{aligned}
 \nabla R_\theta
 &=\sum\limits_{\tau}[R(\tau)\nabla p_\theta(\tau)] \\
 &=\sum\limits_{\tau}[R(\tau)p_\theta(\tau)\nabla \log p_\theta(\tau)] \\
 &=E_{\tau \sim p_\theta(\tau)}[R(\tau)\nabla \log p_\theta(\tau)] \\
 &\approx \frac{1}{N}\sum\limits_{i=1}^{N}[R(\tau)\nabla \log p_\theta(\tau)]
+\end{aligned}
 $（1.2）
 
 $
