@@ -3,7 +3,7 @@ author: 最后的开神-wkyc
 icon: pen-to-square
 date: 2023-06-28
 category:
-  - 大语言模型
+  - 语言模型
 tag:
   - 模型
   - 强化学习
@@ -15,7 +15,7 @@ PPO（Proximal Policy Optimization）是一种策略梯度优化算法，它对�
 <!-- more -->
 
 ## 1 策略梯度算法
-策略梯度算法带来了原始算法和总体框架，他告诉我们只要以奖励的期望式6.1为优化目标，通过采样足够多的样本来用均值估算数学期望，再用这个估算值对分布做梯度上升求式1.1的极大值，就可以优化我们所要优化的分布$\theta$。
+策略梯度算法带来了原始算法和总体框架，它告诉我们只要以奖励的期望式1.1为优化目标，通过采样足够多的样本来用均值估算数学期望，再用这个估算值对分布做梯度上升求式1.1的极大值，就可以优化我们所要优化的分布$\theta$。
 
 $
 R_\theta=E_{\tau\sim{p_\theta(\tau)}}R(\tau)=\sum\limits_{\tau}[R(\tau)p_\theta(\tau)]
@@ -41,9 +41,11 @@ $（1.3）
 为了解决采样时间开销大的问题，引入了重要性采样，将式1.2换算成式2.1。这样我们可以对$\theta^\prime$采样一次之后，多次更新$\theta$，大大节省了训练中采样数据的时间开销。
 
 $
+\begin{aligned}
 \nabla R_\theta
 &=E_{\tau \sim p_{\theta^\prime }(\tau)}[\frac{p_\theta(\tau)}{p_{\theta^\prime}(\tau)} R(\tau)\nabla \log p_\theta(\tau)] \\
 &\approx \frac{1}{N}\sum\limits_{i=1}^{N}[\frac{p_\theta(\tau)}{p_{\theta^\prime}(\tau)}R(\tau)\nabla \log p_\theta(\tau)]
+\end{aligned}
 $（2.1）
 
 还原2.1式，得到我们的新的优化目标，如式2.2所示。
