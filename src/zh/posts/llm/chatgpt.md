@@ -67,7 +67,9 @@ ICL是一个元优化的过程，可以看做隐性微调。GPT首先根据演�
 > ICL只对attention有影响。
 
 ## 5 参考
+
 [1] Jason Wei, Maarten Bosma, Vincent Y. Zhao, Kelvin Guu, Adams Wei Yu, Brian Lester, et al. Finetuned language models are zero-shot learners. In: International conference on learning representations, 2022
+
 
 [2]	Long Ouyang, Jeff Wu, Xu Jiang, Diogo Almeida, Carroll L. Wainwright, Pamela Mishkin, et al. Training language models to follow instructions with human feedback. In: Advances in neural information processing systems: 35, Curran Associates, Inc., 2022: 27730-27744
 
