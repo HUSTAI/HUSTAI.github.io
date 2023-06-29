@@ -2,6 +2,7 @@
 author: 最后的开神-wkyc
 icon: pen-to-square
 date: 2023-06-28
+shortTitle: 近端策略优化算法
 category:
   - 语言模型
 tag:
