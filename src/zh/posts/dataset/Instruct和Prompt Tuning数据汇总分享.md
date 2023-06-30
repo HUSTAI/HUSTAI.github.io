@@ -2,7 +2,7 @@
 author: shb
 icon: book
 date: 2023-06-13
-shortTitle: 指令数据集和提示数据集分享
+shortTitle: 指令微调和提示微调数据集分享
 category:
   - 数据集
 tag:
@@ -11,7 +11,7 @@ tag:
 
 ---
 
-# 指令数据集和提示数据集分享
+# 指令微调（Instruct Tuning）和提示微调（Prompt Tuning）数据集分享
 
 指令数据集和提示数据集在模型微调方面，尤其是在模型与人类认识对齐方面，作用巨大。本文针对一些质量较高的指令数据集和提示数据集，进行了简要介绍。
 
