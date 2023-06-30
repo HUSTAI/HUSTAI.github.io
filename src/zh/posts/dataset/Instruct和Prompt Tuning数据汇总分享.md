@@ -89,19 +89,21 @@ UnifiedSKG 在 Text-to-Text 的框架中加入了 knowledge grounding，也就�
 
 为方便读者阅读，上述数据集可以总结概括为以下表格
 
+| 数据集/项目名称                                 | 组织/作者     | 类别                                                     | 简介                                                         |
+| :---------------------------------------------- | ------------- | -------------------------------------------------------- | ------------------------------------------------------------ |
+| Natural Instruction / Super-Natural Instruction | Allen AI      | 指令微调&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 包含61个NLP任务（Natural Instruction）和1600个NLP任务（Super-Natural Instruction）的指令数据 |
+| HH-RLHF                                         | Anthropic     | 指令微调                                                 | 旨在训练Helpful and Harmless（HH）的LLMs的RLHF数据集         |
+| Unnatural Instruction                           | orhonovich    | 指令微调                                                 | 使用GPT3将 64k 的 prompt 进行改写，最终得到了 240k 条 instruction 数据。 |
+| Self-Instruct                                   | yizhongw      | 指令微调                                                 | 使用LLMs生成prompt进行instruct-tuning的方法，引入Task pool和Quality filtering等概念 |
+| Flan Collection                                 | Google        | 指令微调                                                 | 将Flan 2021数据与一些开源的instruction数据（P3，super-natural instruction等）进行合并 |
+| InstructDial                                    | prakharguptaz | 指令微调                                                 | 在特定的一种任务类型（对话指令）上进行指令微调的尝试         |
+| PromptSource / P3                               | BigScience    | 提示微调                                                 | 包含270个NLP任务的2000多个prompt模版（PromptSource）和规模在100M-1B之间的P3数据集 |
+| xMTF                                            | BigScience    | 提示微调                                                 | 包含13个NLP任务、46种语言的多语言prompt数据                  |
+| Unnatural Instruction                           | orhonovich    | 提示微调                                                 | 使用GPT3生成64k的instruction prompt数据，经改写后得到240k条instruction数据 |
+| UnifiedSKG                                      | HKU           | 提示微调                                                 | 在Text-to-Text框架中加入knowledge grounding，将结构化数据序列化并嵌入到prompt中 |
 
-| 数据集/项目名称                                 | 组织/作者     | 类别     | 简介                                                         |
-| :---------------------------------------------- | ------------- | -------- | ------------------------------------------------------------ |
-| Natural Instruction / Super-Natural Instruction | Allen AI      | 指令微调 | 包含61个NLP任务（Natural Instruction）和1600个NLP任务（Super-Natural Instruction）的指令数据 |
-| HH-RLHF                                         | Anthropic     | 指令微调 | 旨在训练Helpful and Harmless（HH）的LLMs的RLHF数据集         |
-| Unnatural Instruction                           | orhonovich    | 指令微调 | 使用GPT3将 64k 的 prompt 进行改写，最终得到了 240k 条 instruction 数据。 |
-| Self-Instruct                                   | yizhongw      | 指令微调 | 使用LLMs生成prompt进行instruct-tuning的方法，引入Task pool和Quality filtering等概念 |
-| Flan Collection                                 | Google        | 指令微调 | 将Flan 2021数据与一些开源的instruction数据（P3，super-natural instruction等）进行合并 |
-| InstructDial                                    | prakharguptaz | 指令微调 | 在特定的一种任务类型（对话指令）上进行指令微调的尝试         |
-| PromptSource / P3                               | BigScience    | 提示微调 | 包含270个NLP任务的2000多个prompt模版（PromptSource）和规模在100M-1B之间的P3数据集 |
-| xMTF                                            | BigScience    | 提示微调 | 包含13个NLP任务、46种语言的多语言prompt数据                  |
-| Unnatural Instruction                           | orhonovich    | 提示微调 | 使用GPT3生成64k的instruction prompt数据，经改写后得到240k条instruction数据 |
-| UnifiedSKG                                      | HKU           | 提示微调 | 在Text-to-Text框架中加入knowledge grounding，将结构化数据序列化并嵌入到prompt中 |
+
+
 
 **[阅读原文](https://zhuanlan.zhihu.com/p/615277009)**
 
