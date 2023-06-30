@@ -23,7 +23,7 @@ tag:
 
 但 16384 并不是生成所需上下文长度的上限：涉及长篇叙事的任务，如书籍摘要（Krys-´cinski et al.，2021）或叙事问答（Kociskýet al.，2018），通常输入超过 10 万个 Token。维基百科文章生成的挑战集（Liu*et al.，2018）包含超过 50 万个 Token 的输入。生成式问答中的开放域任务可以从更大的输入中综合信息，例如回答关于维基百科上所有健在作者的文章的聚合属性的问题。图 1 根据常见的上下文窗口长度绘制了几个流行的摘要和问答数据集的大小；最长的输入比 Longformer 的上下文窗口长 34 倍以上。
 
-![图1 数据集Token统计](/assets/images/llm/Unlimiformer1.png)
+![图1.1 数据集Token统计](/assets/images/llm/Unlimiformer1.png)
 
 在这些超长输入的情况下，普通变换网络（Vanilla Transformer, VT） 无法进行缩放，因为原生注意力机制具有平方级的复杂度。长输入 Transformer 虽然比标准 Transformer 更高效，但仍需要大量的计算资源，这些资源随着上下文窗口大小的增加而增加。此外，增加上下文窗口需要用新的上下文窗口大小从头开始重新训练模型，计算上和环境上的代价都不小。
 
@@ -55,7 +55,7 @@ Unlimiformer 可以直接应用于经过训练的模型，并且可以在没有�
 
 图 2 显示了本文对 Seq2Seq Transformer 架构的更改。使用编码器对完整输入进行块编码，并将其存储在数据存储中；然后，解码时查询编码的隐状态数据存储。kNN 搜索是非参数的，并且可以被注入到任何预训练的 Seq2Seq Transformer 中，详情如下。
 
-![图2 Unlimiformer原理图](/assets/images/llm/Unlimiformer3.png)
+![图2.1 Unlimiformer原理图](/assets/images/llm/Unlimiformer3.png)
 
 ## 3 实验结果
 
@@ -63,16 +63,16 @@ Unlimiformer 可以直接应用于经过训练的模型，并且可以在没有�
 
 图3显示了长文本（4k 及 16k 的 Token 输入）摘要数据集中的结果。
 
-![图3 长文本（4k 及 16k 的 Token 输入）摘要数据集中的结果](/assets/images/llm/Unlimiformer4.png)
+![图3.1 长文本（4k 及 16k 的 Token 输入）摘要数据集中的结果](/assets/images/llm/Unlimiformer4.png)
 
 在图 4 的训练方法中，Unlimiformer 能够在各项指标上达到最优。
 
-![图4 使用长范围训练方法的试验结果](/assets/images/llm/Unlimiformer5.png)
+![图3.2 使用长范围训练方法的试验结果](/assets/images/llm/Unlimiformer5.png)
 
 ### 3.2 书籍摘要
 
 图 5 显示了在书籍摘要上的结果。可以看到，基于 BARTbase 和 PRIMERA，应用Unlimiformer 都能取得一定的改进效果。
 
-![图5 书籍摘要的试验结果](/assets/images/llm/Unlimiformer6.png)
+![图3.3 书籍摘要的试验结果](/assets/images/llm/Unlimiformer6.png)
 
 [原文链接]( https://mp.weixin.qq.com/s/VktrpfEUK99Zrm3AJJwW-g)
