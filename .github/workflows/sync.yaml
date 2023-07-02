@@ -1,5 +1,7 @@
 name: Sync To Gitee
-on: page_build
+on:
+  push:
+    branches: [main]
 jobs:
   sync:
     runs-on: ubuntu-latest
