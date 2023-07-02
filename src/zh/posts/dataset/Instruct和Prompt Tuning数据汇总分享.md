@@ -2,7 +2,7 @@
 author: shb
 icon: book
 date: 2023-06-13
-shortTitle: 指令微调和提示微调数据集分享
+shortTitle: 10个Instruct Tuning和Prompt Tuning数据集分享
 category:
   - 数据集
 tag:
@@ -11,13 +11,13 @@ tag:
 
 ---
 
-# 指令微调（Instruct Tuning）和提示微调（Prompt Tuning）数据集分享
+# Instruct Tuning和Prompt Tuning数据集分享
 
-指令数据集和提示数据集在模型微调方面，尤其是在模型与人类认识对齐方面，作用巨大。本文针对一些质量较高的指令数据集和提示数据集，进行了简要介绍。
+Instruct Tuning（指令微调）数据集和Prompt Tuning(提示微调)数据集在模型微调方面，尤其是在模型与人类认识对齐方面，作用巨大。本文针对一些质量较高的指令微调数据集和提示微调数据集，进行了简要介绍。
 
 <!-- more -->
 
-## 1 指令微调数据集分享
+## 1 Instruct Tuninig数据集分享
 （1） Super-Natural Instruction 【Allen AI】
 
 这些自然语言指令清楚而完整地描述了一项任务（传统上定义为将输入字符串映射到输出字符串）。配备“理解”语言说明的模型，如果提供了任务说明，应该可以成功解决任何看不见的任务。
@@ -56,7 +56,7 @@ Google 在这个项目中将自己的 Flan 2021 数据与一些开源的 instruc
 项目链接：https://github.com/prakharguptaz/Instructdial/tree/main/datasets
 InstructDial 是在特定的一种任务类型上进行指令微调的尝试。实验结果表明，在对话指令数据上微调后，模型在对话任务上的表现强于在超大规模任务集上的结果
 
-## 2 提示微调数据集分享
+## 2 Prompt Tuning数据集分享
 
 （1）PromptSource【BigScience】
 
@@ -91,7 +91,7 @@ UnifiedSKG 在 Text-to-Text 的框架中加入了 knowledge grounding，也就�
 
 
 | 数据集/项目名称                                 | 组织/作者     | 类别                                                         | 简介                                                         |
-| :---------------------------------------------- | ------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| :---------------------------------------------- | ------------- | --------------------------------------------------------------- | ------------------------------------------------------------ |
 | Natural Instruction / Super-Natural Instruction | Allen AI      | 指令微调&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 包含61个NLP任务（Natural Instruction）和1600个NLP任务（Super-Natural Instruction）的指令数据 |
 | HH-RLHF                                         | Anthropic     | 指令微调                                                     | 旨在训练Helpful and Harmless（HH）的LLMs的RLHF数据集         |
 | Unnatural Instruction                           | orhonovich    | 指令微调                                                     | 使用GPT3将 64k 的 prompt 进行改写，最终得到了 240k 条 instruction 数据。 |
