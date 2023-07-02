@@ -92,7 +92,7 @@ UnifiedSKG 在 Text-to-Text 的框架中加入了 knowledge grounding，也就�
 
 | 数据集/项目名称                                 | 组织/作者     | 类别                                                         | 简介                                                         |
 | :---------------------------------------------- | ------------- | --------------------------------------------------------------- | ------------------------------------------------------------ |
-| Natural Instruction / Super-Natural Instruction | Allen AI      | 指令微调&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | 包含61个NLP任务（Natural Instruction）和1600个NLP任务（Super-Natural Instruction）的指令数据 |
+| Natural Instruction / Super-Natural Instruction | Allen AI      | <div style="width: 60pt">指令微调</div> | 包含61个NLP任务（Natural Instruction）和1600个NLP任务（Super-Natural Instruction）的指令数据 |
 | HH-RLHF                                         | Anthropic     | 指令微调                                                     | 旨在训练Helpful and Harmless（HH）的LLMs的RLHF数据集         |
 | Unnatural Instruction                           | orhonovich    | 指令微调                                                     | 使用GPT3将 64k 的 prompt 进行改写，最终得到了 240k 条 instruction 数据。 |
 | Self-Instruct                                   | yizhongw      | 指令微调                                                     | 使用LLMs生成prompt进行instruct-tuning的方法，引入Task pool和Quality filtering等概念 |
