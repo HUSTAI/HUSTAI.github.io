@@ -2,7 +2,7 @@
 author: shb
 icon: book
 date: 2023-06-13
-shortTitle: Instruct/Prompt Tuning数据集分享
+shortTitle: 指令/提示微调数据集分享
 category:
   - 数据集
 tag:
