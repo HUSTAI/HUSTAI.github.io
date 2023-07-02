@@ -42,6 +42,7 @@ jobs:
           branch: gh-pages
           folder: src/.vuepress/dist
   
+  # refer: https://github.com/marketplace/actions/gitee-pages-action
   sync-to-gitee:
     needs: deploy-gh-pages
     runs-on: ubuntu-latest
