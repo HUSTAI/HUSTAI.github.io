@@ -7,7 +7,7 @@ title: 大幅优化推理速度-ByteTransformer
 category:
   - 语言模型
 tag:
-  - transformer
+  - Transformer
   - 优化
   - 字节
 ---

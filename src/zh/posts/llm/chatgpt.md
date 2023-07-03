@@ -8,7 +8,7 @@ category:
 tag:
   - OpenAI
   - Google
-  - Instruction Tuning
+  - Instruct Tuning
   - In-context Learning
   - ChatGPT
 ---
