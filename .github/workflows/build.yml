@@ -1,20 +1,16 @@
-name: Deploy Github Docs
+name: Build Github Docs
 
 on:
-  push:
-    branches:
-      - main
   pull_request:
 
 jobs:
-  deploy-gh-pages:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          # submodules: true
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
@@ -22,13 +18,11 @@ jobs:
           run_install: true
           version: 8.6.2
 
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 18
           cache: pnpm
-
 
       - name: Docs build
         env:
@@ -36,9 +30,3 @@ jobs:
         run: |-
           pnpm run docs:build
           > src/.vuepress/dist/.nojekyll
-
-      - name: Docs Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: src/.vuepress/dist

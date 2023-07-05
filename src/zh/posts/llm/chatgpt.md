@@ -8,7 +8,7 @@ category:
 tag:
   - OpenAI
   - Google
-  - Instruction Tuning
+  - Instruct Tuning
   - In-context Learning
   - ChatGPT
 ---
@@ -67,6 +67,7 @@ ICL是一个元优化的过程，可以看做隐性微调。GPT首先根据演�
 > ICL只对attention有影响。
 
 ## 5 参考
+
 
 [1] Jason Wei, Maarten Bosma, Vincent Y. Zhao, Kelvin Guu, Adams Wei Yu, Brian Lester, et al. Finetuned language models are zero-shot learners. In: Proceedings of the 10th International Conference on Learning Representations (ICLR 2022), Online, April 25-29, 2022, OpenReview.net, 2022: 1-46
 

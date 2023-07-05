@@ -13,11 +13,11 @@
 
 `category` 请从以下类别中选择
 
-- 语言模型(`llm`)
-- 提示技术(`prompt`)
-- 微调技术(`finetune`)
-- 评估方法(`eval`)
-- 数据集(`dataset`)
+- 语言模型(`LLM`)
+- 提示技术(`Prompt`)
+- 微调技术(`Finetune`)
+- 评估方法(`Eval`)
+- 数据集(`Dataset`)
 - `Token`
 
 在 [src/zh/posts/${category}](https://github.com/HUSTAI/HUSTAI.github.io/tree/main/src/zh/posts/) 目录下增加一个新的 `md` 文件，参考[配置](https://theme-hope.vuejs.press/zh/config/frontmatter/info.html)来设置 `Frontmatter`
@@ -30,7 +30,19 @@
 ![alt name](/assets/images/${category}/image.xxx "image title")
 ```
 
+## 添加公式
+单个$符代表行内公式，两个$符代表行外居中公式。
+添加\tag标签为公式添加序号。
+```plain
+$$
+f(x)=2x^2
+\tag {1.2}
+$$
+```
+
 ## 添加参考文献
+
+此操作过时，参考最新文章添加即可。
 
 1. 添加锚点
 ```
