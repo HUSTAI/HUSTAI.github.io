@@ -1,7 +1,7 @@
 ---
 author: 最后的开神-wkyc
 icon: pen-to-square
-date: 2023-07-05
+date: 2023-07-06
 category:
   - LLM
 tag:
@@ -161,7 +161,7 @@ FlashAttention主要是为了做训练提速的，当输入序列较长时，由
 
 具体的，其主要思想是将输入的Q、K和V矩阵划分成块（block），将这些块从HBM加载至SRAM中，然后根据这些块来计算注意力输出，这个过程被称为“切片（tiling）”。
 
-![示意图](/assets/images/llm/ChatGLM2_1.jpg "图2.1 FlashAttention原理示意图")
+![示意图](/assets/images/llm/chatglm2_1.jpg "图2.1 FlashAttention原理示意图")
 
 如上图所示，左图中FlashAttention使用切片技术，防止将大型n × n注意力矩阵（虚线框内）存储到HBM中。在外部循环（红色箭头）中，FlashAttention循环遍历K和V矩阵的块，并将它们加载到SRAM中。在每个块中，FlashAttention循环遍历Q矩阵的块（蓝色箭头），将它们加载到SRAM中，并将注意力计算的输出写回至HBM。
 
@@ -197,4 +197,4 @@ key: torch.Size([1, 1, 32, 128])
 value: torch.Size([1, 1, 32, 128])
 ```
 ## 4 测试结果
-![示意图](/assets/images/llm/ChatGLM2_2.png "图4.1 ChatGLM和ChatGLM2对比")
+![示意图](/assets/images/llm/chatglm2_2.png "图4.1 ChatGLM和ChatGLM2对比")
