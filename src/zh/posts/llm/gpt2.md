@@ -3,15 +3,19 @@ author: 最后的开神-wkyc
 icon: pen-to-square
 date: 2023-07-05
 category:
-  - LLM
-tag:
   - 语言模型
+tag:
+  - GPT
 # sticky: 10
 ---
 
 # GPT2论文分享与架构分析
-论文名称：Language Models are Unsupervised Multitask Learners
+
+GPT-2 模型由多层单向 Transformer 的解码器部分构成，本质上是自回归模型，自回归的意思是指，每次产生新单词后，将新单词加到原输入句后面，作为新的输入句。
+
 <!-- more -->
+
+论文名称：Language Models are Unsupervised Multitask Learners
 
 ## 1 语言建模
 

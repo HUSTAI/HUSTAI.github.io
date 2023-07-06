@@ -3,9 +3,9 @@ author: 最后的开神-wkyc
 icon: pen-to-square
 date: 2023-07-06
 category:
-  - LLM
-tag:
   - 语言模型
+tag:
+  - Transformer
 shortTitle: Encoder和Decoder
 # sticky: 10
 ---
