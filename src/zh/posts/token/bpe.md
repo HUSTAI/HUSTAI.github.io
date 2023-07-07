@@ -1,6 +1,6 @@
 ---
 author: 最后的开神-wkyc
-icon: pen-to-square
+icon: clipboard-list
 date: 2023-07-05
 category:
   - Token
