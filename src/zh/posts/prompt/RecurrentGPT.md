@@ -1,14 +1,14 @@
 ---
 author: 研究生鱼皮-yjf
 icon: wand-magic-sparkles
-date: 2023-06-05
+date: 2023-05-30
 shortTitle: "RecurrentGPT"
 category:
   - 提示技术
 tag:
-  - 推理
+  - Memory
   - LLM
-  - CoT
+  - ChatGPT
 ---
 
 
