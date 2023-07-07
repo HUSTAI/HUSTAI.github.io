@@ -69,13 +69,19 @@ LORA也是类似的思想，并且它不再局限于Embedding层，而是所有�
 
 从论文中的公式来看，在加入LORA之前，模型训练的优化表示为：
 
-![](/assets/images/finetune/PEFT_02.png)
+$$
+\max_\Phi\sum_{(x,y)\in\mathcal{Z}}\sum_{t=1}^{|y|}\log\left(P_\Phi(y_t|x,y_{<t})\right)
+\tag {2.1}
+$$
 
 其中，模型的参数用 Φ 表示。
 
 而加入了LORA之后，模型的优化表示为：
 
-![](/assets/images/finetune/PEFT_03.png)
+$$
+\max_{\Theta}\sum_{(x,y)\in\mathcal{Z}}\sum_{t=1}^{|y|}\log\left(p_{\Phi_0+\Delta\Phi(\Theta)}(y_t|x,y_{<t})\right)
+\tag {2.2}
+$$
 
 其中，模型原有的参数是Φ ，LORA新增的参数是Δ Φ ( Θ )。
 
