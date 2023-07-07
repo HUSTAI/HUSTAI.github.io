@@ -1,6 +1,6 @@
 ---
 author: 最后的开神-wkyc
-icon: pen-to-square
+icon: palette
 date: 2023-07-06
 category:
   - 评估方法
