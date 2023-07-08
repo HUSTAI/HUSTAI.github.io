@@ -18,13 +18,12 @@ tag:
 
 <!-- more -->
 
-![论文截图](/assets/images/llm/bytetransformer1.png "图1 论文信息")
+## 1 介绍
+
+![论文截图](/assets/images/llm/bytetransformer1.png "图1.1 论文信息")
 
 论文地址：https://arxiv.org/abs/2210.03052
 代码地址：https://github.com/bytedance/ByteTransformer
-
-
-## 1 介绍
 
 现有的一些深度学习框架，如Tensorflow，PyTorch，TVM以及NVIDIA TensorRT等，要求输入序列长度相同，才能利用批处理加速Transformer计算。然而，在实际场景中，输入序列通常是变长的，而零填充会引入大量的额外计算开销。字节跳动AML团队先前提出的“effective Transformer”，通过对输入的重排列，实现了 QKV projection 和 MLP 的 padding free，但 self attention 部分仍然需要 padding。
 为了解决这个问题，字节跳动 AML 团队提出了 ByteTransformer，它实现了变长输入的 padding free 计算，并且实现了全面的 kernel fusion 以进一步提高性能。
@@ -35,7 +34,7 @@ tag:
 
 这个算法源自字节跳动 AML 团队之前的工作 "effective Transformer"，在 NVIDIA 开源 FasterTransformer 中也有集成。ByteTransformer 同样使用该算法去除对 attention 外矩阵乘的额外计算。
 
-![padding free](/assets/images/llm/bytetransformer2.png "图2 Remove padding 算法")
+![padding free](/assets/images/llm/bytetransformer2.png "图2.1 Remove padding 算法")
 
 算法步骤如下。
 
@@ -63,7 +62,7 @@ NVIDIA 开发的 grouped GEMM 可以在一个 kernel 中完成多个独立矩阵
 
 grouped GEMM 原理：kernel 中每个 threadblock (CTA) 固定分块大小，每个矩阵乘子问题根据问题大小和分块大小，拆解为不同数量的待计算块，再把这些块平均分配到每个 threadblock 中进行计算。
 
-![grouped GEMM 原理图](/assets/images/llm/bytetransformer3.png "图3 grouped GEMM 原理")
+![grouped GEMM 原理图](/assets/images/llm/bytetransformer3.png "图2.2 grouped GEMM 原理")
 
 使用 grouped GEMM 实现 attention 时，由于子问题的数量 batch_size x head_num 通常较大，读取子问题参数会有不小的开销，因为从线程角度看，每个线程都需要遍历读取所有的子问题大小。为了解决这个问题，ByteTransformer 对 grouped GEMM 中读取子问题参数进行了性能优化，使其可以忽略不计。
 
@@ -72,7 +71,7 @@ grouped GEMM 原理：kernel 中每个 threadblock (CTA) 固定分块大小，�
 （2）warp prefetch. 原始实现中，每个 CUDA thread 依次读取所有的子问题 problem size，效率很低。改为一个 warp 内线程读取连续的 32 个子问题参数，然后通过 warp 内线程通信交换数据，每个线程的读取次数降低到 1/32。
 
 
-![warp prefetch 示意图](/assets/images/llm/bytetransformer4.png "图4 warp prefetch")
+![warp prefetch 示意图](/assets/images/llm/bytetransformer4.png "图2.3 warp prefetch")
 
 
 
