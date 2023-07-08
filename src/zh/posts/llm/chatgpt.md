@@ -23,7 +23,7 @@ tag:
 
 2022年5-6月发布的text-davinci-002是一个基于code-davinci-002的有监督指令微调（Supervised Instruction Tuning）模型。然后是text-davinci-003和 ChatGPT，它们都在2022年11月发布，是使用的基于人类反馈的强化学习的版本指令微调（Instruction Tuning with Reinforcement Learning from Human Feedback）模型的两种不同变体。
 
-![图1 GPT系列模型树](/assets/images/llm/chatgpt1.png "图1 GPT系列模型树")
+![GPT系列模型树](/assets/images/llm/chatgpt1.png "图1.1 GPT系列模型树" =x400)
 
 
 
@@ -37,7 +37,7 @@ tag:
 
 ## 3 模型的训练方法和数据集
 
-![图2 模型训练步骤](/assets/images/llm/chatgpt2.png "图2 模型训练步骤")
+![模型训练步骤](/assets/images/llm/chatgpt2.png "图3.1 模型训练步骤")
 
 （1）**SFT阶段**，使用人工标注prompt数据集的答案用来finetune模型。这一步得到的模型是davinci-instruct-beta。
 
@@ -46,7 +46,7 @@ tag:
 
 （3）**PPO阶段**，使用RM来更新ppo策略，从而使GPT产生的答案更偏向于标注人员的喜好。
 
-![表1 InstructGPT的训练数据构成](/assets/images/llm/chatgpt3.png "表1 InstructGPT的训练数据构成")
+![InstructGPT的训练数据构成](/assets/images/llm/chatgpt3.png "表3.1 InstructGPT的训练数据构成")
 
 据推测，ChatGPT使用了和text-davinci-003相同的训练方法，采用了不同的数据集，而且更加注重生成答案的无害性和对话性。
 
@@ -58,7 +58,7 @@ tag:
 
 ICL只存在一次前向传播中，还是会被模型记住？论文中ICL的测试数据，类似于下图所示，每次预测都需要结合之前的几个demonstration，由此推测ICL并不会被模型记住。结合对text-davinci-003的测试，在一次调用中教会它数学题，之后单独询问，模型并不能正确回答，由此可以证明ICL只存在于一次前向传播。
 
-![图3 ICL和微调的区别](/assets/images/llm/chatgpt4.png "图3 ICL和微调的区别")
+![ICL和微调的区别](/assets/images/llm/chatgpt4.png "图4.1 ICL和微调的区别" =x450)
 
 ICL是一个元优化的过程，可以看做隐性微调。GPT首先根据演示示例生成元梯度，然后将这些元梯度应用于原始GPT以构建ICL模型。
 
