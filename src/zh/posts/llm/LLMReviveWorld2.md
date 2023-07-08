@@ -10,7 +10,7 @@ shortTitle: LLM如何重映现实世界（二）
 # LLM如何重映现实世界（二）：LLM中的知识回路与回路竞争猜想
 
 
-本文主要介绍LLM中的知识回路以及回路竞争猜想。有关LLM在完成任务过程中，信息由下到上是如何传递的，以及如何预测下一个输出token。
+本文主要介绍LLM中的知识回路以及回路竞争猜想。有关LLM在完成NLP任务过程中，信息由下到上是如何传递的，以及LLM如何预测下一个token。
 
 <!-- more -->
 
@@ -24,7 +24,7 @@ shortTitle: LLM如何重映现实世界（二）
 
 ::: tip
 
-论文：How does GPT-2 compute greater-than?: Interpreting mathematical abilities in a pre-trained language model[^1] 
+论文：How does GPT-2 compute greater-than?: Interpreting mathematical abilities in a pre-trained language model
 
 GPT-2 如何计算大于？：在预训练语言模型中解释数学能力
 
@@ -52,7 +52,7 @@ GPT-2 如何计算大于？：在预训练语言模型中解释数学能力
 
 ::: tip
 
-论文：Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small[^2]
+论文：Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small
 可解释性：GPT-2 small 中的间接对象识别回路
 
 ::: 
@@ -64,9 +64,9 @@ GPT-2 如何计算大于？：在预训练语言模型中解释数学能力
 ![示意图](/assets/images/llm/LLM2_5.png "图1.5 间接对象识别示意图")
 
 如图1.5所示，「Indirect Object Identification」知识回路识别正确答案，主要由三个步骤构成：
-首先，Duplicate Token Heads 用于标识多次出现在句子中的 Token，而 Induction Heads 起到类似的作用；
-其次，S-Inhibition Heads 在输出 Next Token 的位置发生作用，用于从 Name Mover Heads 的注意力中删除或者抑制重复出现的名字；
-最后，输出剩余的名称 Token。
+（1）Duplicate Token Heads 用于标识多次出现在句子中的 Token，而 Induction Heads 起到类似的作用
+（2）S-Inhibition Heads 在输出 Next Token 的位置发生作用，用于从 Name Mover Heads 的注意力中删除或者抑制重复出现的名字
+（3）输出剩余的名称 Token。
 由上可看出，LLM 模型在预训练过程中，为了更好地进行 Next Token 预测，学习到了非常复杂的 Attention 知识回路，来执行对某些输入 Token 拷贝并在 Next Token Prediction 结果中输出。
 
 ## 2 回路竞争猜想
@@ -80,5 +80,5 @@ GPT-2 如何计算大于？：在预训练语言模型中解释数学能力
 我们在此基础上可以重新看待任务回路的形成。**任务回路应该是 GPT 为了更精准预测某种特殊类型数据的 Next Token，从 Transformer 的输入层开始，逐层关联相关的 “激发微结构”，从而形成了一个由低向上逐层激发，并最终关联到输出位置，** 以决定输出 Token 概率的完整通路结构（可参考图2.1红线部分勾勒出的某个任务通路）。学会了这种任务回路，如果 GPT 后续再见到此类数据，则 Next Token 预测精准性增加，体现为 NTP 任务 Loss 的降低。比如如果训练数据里大量出现 「13+24=37」这种加减乘除的例子，大概率 GPT 会学会一个用于简单数学计算的任务回路，以此增加等号后数字的 Next Token 预测精准性。
 
 ## 3 参考
-[[^1]]:Hanna M, Liu O, Variengien A. How does GPT-2 compute greater-than?: Interpreting mathematical abilities in a pre-trained language model[J]. arXiv preprint arXiv:2305.00586, 2023.
-[[^2]]: Wang K, Variengien A, Conmy A, et al. Interpretability in the wild: a circuit for indirect object identification in gpt-2 small[J]. arXiv preprint arXiv:2211.00593, 2022.
+[1]:Hanna M, Liu O, Variengien A. How does GPT-2 compute greater-than? Interpreting mathematical abilities in a pre-trained language model[J]. arXiv preprint arXiv:2305.00586, 2023.
+[2]: Wang K, Variengien A, Conmy A, et al. Interpretability in the wild: a circuit for indirect object identification in gpt-2 small[J]. arXiv preprint arXiv:2211.00593, 2022.
