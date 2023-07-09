@@ -1,6 +1,7 @@
 ---
 icon: pen-to-square
 author: shb
+date: 2023-07-08
 tag:
   - 语言模型
   - 知识回路
