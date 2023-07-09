@@ -17,7 +17,7 @@ tag:
 
 <!-- more -->
 
-<PDF url="https://arxiv.org/abs/2303.05398.pdf" />
+<PDF url="https://arxiv.org/pdf/2303.05398.pdf" />
 
 > 论文要解决的问题
 
