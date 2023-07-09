@@ -9,6 +9,7 @@ tag:
   - 推理
   - LLM
   - CoT
+  - ToT
 ---
 
 # Tree-of-Thought: 思维树

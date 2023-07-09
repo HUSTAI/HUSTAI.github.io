@@ -13,7 +13,7 @@ tag:
 
 # MathPrompter: 数学推理
 
-该文介绍了 `MathPrompter: 数学推理` 框架，解决需要多步推理的复杂数学问题。
+[该文](https://mp.weixin.qq.com/s/DUS4pc7izs9CS3Pmz3WMxg)介绍了 `MathPrompter: 数学推理` 框架，解决需要多步推理的复杂数学问题。
 
 <!-- more -->
 
