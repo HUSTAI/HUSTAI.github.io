@@ -1,6 +1,6 @@
 ---
 author: lx
-icon: pen-to-square
+icon: wand-magic-sparkles
 date: 2023-06-05
 shortTitle: "PEARL: 长文档推理提示"
 category:
