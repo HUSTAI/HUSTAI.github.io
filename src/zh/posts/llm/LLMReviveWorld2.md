@@ -81,6 +81,6 @@ GPT-2 如何计算大于？：在预训练语言模型中解释数学能力
 我们在此基础上可以重新看待任务回路的形成。**任务回路应该是 GPT 为了更精准预测某种特殊类型数据的 Next Token，从 Transformer 的输入层开始，逐层关联相关的 “激发微结构”，从而形成了一个由低向上逐层激发，并最终关联到输出位置，** 以决定输出 Token 概率的完整通路结构（可参考图2.1红线部分勾勒出的某个任务通路）。学会了这种任务回路，如果 GPT 后续再见到此类数据，则 Next Token 预测精准性增加，体现为 NTP 任务 Loss 的降低。比如如果训练数据里大量出现 「13+24=37」这种加减乘除的例子，大概率 GPT 会学会一个用于简单数学计算的任务回路，以此增加等号后数字的 Next Token 预测精准性。
 
 ## 3 参考
-[1] Hanna M, Liu O, Variengien A. How does GPT-2 compute greater-than?: Interpreting mathematical abilities in a pre-trained language model[J]. arXiv preprint arXiv:2305.00586, 2023.
-[2] Wang K, Variengien A, Conmy A, et al. Interpretability in the wild: a circuit for indirect object identification in gpt-2 small[J]. arXiv preprint arXiv:2211.00593, 2022.
+[1] Michael Hanna, Ollie Liu, Alexandre Variengien. How does GPT-2 compute greater-than? Interpreting mathematical abilities in a pre-trained language model. arXiv preprint arXiv:2305.00586, 2023
+[2] Kevin R. Wang, Alexandre Variengien, Arthur Conmy, Buck Shlegeris, Jacob Steinhardt. Interpretability in the wild: a circuit for indirect object identification in gpt-2 small. In: Proceedings of the 11th International Conference on Learning Representations (ICLR 2023), Kigali, Rwanda, May 1-5, 2023, OpenReview.net, 2023: 1-21
 
