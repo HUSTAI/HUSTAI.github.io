@@ -26,9 +26,9 @@ tag:
 
 ## 1 背景介绍
 
-现实中的语料错综复杂，通常需要在较长的上下文中推理得到最后的结果，该文 ^\[1\]^ 任务在长篇文本中进行复杂的推理通常需要形成**文本的高级抽象**（例如，对文档叙事中的情节和主题进行摘要和抽象），并在这些抽象之上进行各种推理。
+现实中的语料错综复杂，通常需要在较长的上下文中推理得到最后的结果，[该文](https://mp.weixin.qq.com/s/dQhRiH62Mz9umx7GFeQRvw) 任务在长篇文本中进行复杂的推理通常需要形成**文本的高级抽象**（例如，对文档叙事中的情节和主题进行摘要和抽象），并在这些抽象之上进行各种推理。
 
-让我们来考虑`QuaLITY`数据集 ^\[2\]^ 中关于 `Breakaway` 的问题：“在结尾中哪些句子与开场句子相对应？”。
+让我们来考虑`QuaLITY`[数据集](https://paperswithcode.com/paper/quality-question-answering-with-long-input) 中关于 `Breakaway` 的问题：“在结尾中哪些句子与开场句子相对应？”。
 
 为了回答上述问题，需要从整个故事中收集、评估和整合信息，解决问题的思路可以拆解为以下的几个步骤。
 
@@ -703,10 +703,3 @@ output = ACTION (arg1, arg2, ...)，
 在 `Longer` 上下文关联情况下，与 `Zero-shot GPT-4` 基线相比，`PEARL` 的表现有了显著改善（$72.4\text{％} \ vs\ 61.9\text{％}$）。该方法在短拆分上的表现不好，可能是由于“过度思考”这些更简单的问题以及计划执行步骤中的错误传播所致。
 
 ![图3.2 上下文长度影响](/assets/images/llm/pearl-5.png "图3.2 上下文长度影响" =500x)
-
-
-## 4 参考
-
-[1] [一个专用于长文档推理的提示框架PEARL，性能比GPT-4高10.5%！](https://mp.weixin.qq.com/s/dQhRiH62Mz9umx7GFeQRvw)
-
-[2] [QuALITY数据集](https://paperswithcode.com/paper/quality-question-answering-with-long-input)
