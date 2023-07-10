@@ -1,6 +1,6 @@
 ---
 author: hyb
-icon: boxes-packing
+icon: wand-magic-sparkles
 date: 2023-06-13
 shortTitle: "Prompt工程指南"
 category:
