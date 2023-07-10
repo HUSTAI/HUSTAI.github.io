@@ -540,7 +540,7 @@ PAL (Program-Aided Language Models): Code as Reasoning
 
 Gao 等人 (2022) 提出了一种使用 LLM 阅读自然语言问题并生成程序作为中间推理步骤的方法。 创造的程序辅助语言模型 (PAL)，它与思维链提示的不同之处在于，它不是使用自由格式的文本来获取解决方案，而是将解决方案步骤卸载到编程运行时，例如 Python 解释器。
 
-![](https://github.com/dair-ai/Prompt-Engineering-Guide/blob/main/img/pal.png)
+![](/assets/images/prompt/PromptEngineeringGuide_01.png)
 
 ```
 question = "Today is 27 February 2023. I was born exactly 25 years ago. What is the date I was born in MM/DD/YYYY?"
@@ -681,3 +681,23 @@ Label: Positive
 Text: "Watching TV makes me happy."
 Label: Positive
 ```
+
+## 5 参考
+
+[1] [Prompt-Engineering-Guide](https://github.com/dair-ai/Prompt-Engineering-Guide)
+
+[2] Sewon Min, Xinxi Lyu, Ari Holtzman, Mikel Artetxe, Mike Lewis, Hannaneh Hajishirzi, et al. Rethinking the Role of Demonstrations: What Makes In-Context Learning Work? arXiv, 2022
+
+[3] Jason Wei, Xuezhi Wang, Dale Schuurmans, Maarten Bosma, Brian Ichter, Fei Xia, et al. Chain-of-Thought Prompting Elicits Reasoning in Large Language Models. arXiv, 2023
+
+[4] Takeshi Kojima, Shixiang Shane Gu, Machel Reid, Yutaka Matsuo, Yusuke Iwasawa. Large Language Models are Zero-Shot Reasoners. arXiv, 2022
+
+[5] Xuezhi Wang, Jason Wei, Dale Schuurmans, Quoc Le, Ed Chi, Sharan Narang, et al. Self-Consistency Improves Chain of Thought Reasoning in Language Models. arXiv, 2022
+
+[6] Jiacheng Liu, Alisa Liu, Ximing Lu, Sean Welleck, Peter West, Ronan Le Bras, et al. Generated Knowledge Prompting for Commonsense Reasoning. arXiv, 2022
+
+[7] Taylor Shin, Yasaman Razeghi, Robert L. Logan IV, Eric Wallace, Sameer Singh. AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts. arXiv, 2020
+
+[8] Xiang Lisa Li, Percy Liang. Prefix-Tuning: Optimizing Continuous Prompts for Generation. arXiv, 2021
+
+[9] Brian Lester, Rami Al-Rfou, Noah Constant. The Power of Scale for Parameter-Efficient Prompt Tuning. arXiv, 2021
