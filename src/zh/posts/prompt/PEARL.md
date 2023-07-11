@@ -17,7 +17,7 @@ tag:
 <!-- more -->
 
 ::: tip
-[GitHub CodeBase 代码目前还没放出来](https://github.com/SimengSun/pearl)
+代码仓库：https://github.com/SimengSun/pearl
 :::
 
 <PDF url="https://arxiv.org/pdf/2305.14564.pdf" />
