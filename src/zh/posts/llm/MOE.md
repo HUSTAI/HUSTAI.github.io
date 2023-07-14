@@ -17,9 +17,9 @@ tag:
 <!-- more -->
 
 ## 1 专家的适应性混合
-1991年的论文Adaptive mixtures of local experts提出了一种新的监督学习过程，一个系统中包含多个分开的网络，每个网络去处理全部训练样本的一个子集。这种方式可以看做是把多层网络进行了模块化的转换。
+1991年的论文“Adaptive mixtures of local experts”提出了一种新的监督学习过程，一个系统中包含多个分开的网络，每个网络去处理全部训练样本的一个子集。这种方式可以看做是把多层网络进行了模块化的转换。
 
-假设我们已经知道数据集中存在一些天然的子集（比如来自不同的domain，不同的topic），那么用单个模型去学习，就会受到很多干扰（interference），导致学习很慢、泛化困难。这时，我们可以使用多个模型（即专家，expert）去学习，使用一个门网络（gating network）来决定每个数据应该被哪个模型去训练，这样就可以减轻不同类型样本之间的干扰。
+假设我们已经知道数据集中存在一些天然的子集（比如来自不同的domain，不同的topic），那么用单个模型去学习，就会受到很多干扰（interference），导致学习很慢、泛化困难。这时，我们可以使用多个模型（即专家expert）去学习，使用一个门网络（Gating Network）来决定每个数据应该被哪个模型去训练，这样就可以减轻不同类型样本之间的干扰。
 
 对于一个样本$c$，第$i$个expert的输出为$o_i^c$，理想的输出是$d^c$，那么损失函数计算如式1.1。
 
@@ -28,7 +28,7 @@ E^c={\Vert d^c - \sum\limits_{i}p_i^c o_i^c \Vert}^2
 \tag {1.1}
 $$
 
-其中$p_i^c$是gating network分配给每个expert的权重，相当于多个expert齐心协力来得到当前样本$c$的输出。就是让不同的 expert单独计算loss，然后在加权求和得到总体的loss。这样的话，每个专家都有独立判断的能力，而不用依靠其他的expert来一起得到预测结果。如图1.1所示。
+其中$p_i^c$是Gating Network分配给每个expert的权重，相当于多个expert齐心协力来得到当前样本$c$的输出。就是让不同的 expert单独计算loss，然后在加权求和得到总体的loss。这样的话，每个专家都有独立判断的能力，而不用依靠其他的expert来一起得到预测结果。如图1.1所示。
 
 ![示意图](/assets/images/llm/moe_1.jpg "图1.1 混合专家模型架构图")
 
@@ -42,12 +42,12 @@ $$
 式1.1的导数，只会跟当前expert有关，但式1.2则还考虑其他experts跟当前sample$c$的匹配程度。
 
 ## 2 稀疏门控混合专家
-2017年的论文Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer为混合专家模型添加了稀疏门控和token级别的设置，并且应用到RNN中，如图2.1所示。
+2017年的论文“Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer”为混合专家模型添加了稀疏门控和token级别的设置，并且应用到RNN中，如图2.1所示。
 
 ![示意图](/assets/images/llm/moe_2.png "图1.2 稀疏门控混合专家模型架构图")
 
 ### 2.1 稀疏门控
-设$G(x)$和$E_i(x)$分别是gating network和第$i$个expert的输出，那么对于在当前position的输入x，输出就是所有experts的加权和：
+设$G(x)$和$E_i(x)$分别是Gating Network和第$i$个expert的输出，那么对于在当前position的输入x，输出就是所有experts的加权和：
 
 $$
 y = \sum\limits_{i=1}^{n}G(x)_iE_i(x)
@@ -56,7 +56,7 @@ $$
 
 但是这里我们可能有上千个experts，如果每个都算的话，计算量会非常大，所以这里的一个关键就是希望G(x)的输出是稀疏的，只有部分的experts的权重是大于0的，其余等于0的expert直接不参与计算。
 
-首先看传统的gating network设计如式2.2所示。
+首先看传统的Gating Network设计如式2.2所示。
 
 $$
 G_{\sigma}(x) = Softmax(x \cdot W_g)
@@ -93,7 +93,7 @@ $$
 第一篇文章是sample-level的，即不同的样本，使用不同的experts，但是这篇则是token-level的，一个句子中不同的token使用不同的experts。
 
 ### 2.3 专家平衡
-作者在实验中发现，不同 experts 在竞争的过程中，会出现“赢者通吃”的现象：前期变现好的 expert 会更容易被 gating network 选择，导致最终只有少数的几个 experts 真正起作用。因此作者额外增加了一个 loss，来缓解这种不平衡现象。
+作者在实验中发现，不同 experts 在竞争的过程中，会出现“赢者通吃”的现象：前期变现好的 expert 会更容易被 Gating Network 选择，导致最终只有少数的几个 experts 真正起作用。因此作者额外增加了一个 loss，来缓解这种不平衡现象。
 
 $$
 Importance(X) = \sum\limits_{x \in X}G(x)
@@ -109,7 +109,7 @@ $$
 
 ## 3 GShard：Transformer中的MoE
 
-论文GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding首次将MoE的思想拓展到Transformer上的工作。具体的做法是，把Transformer的encoder和decoder中，每隔一个（every other）的FFN层，替换成position-wise的 MoE层，使用的都是Top-2 gating network。
+论文“GShard: Scaling Giant Models with Conditional Computation and Automatic Sharding”首次将MoE的思想拓展到Transformer上的工作。具体的做法是，把Transformer的encoder和decoder中，每隔一个（every other）的FFN层，替换成position-wise的 MoE层，使用的都是Top-2 Gating Network。
 
 ![示意图](/assets/images/llm/moe_3.png "图3.1 Transformer中的混合专家模型")
 
