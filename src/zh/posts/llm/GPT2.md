@@ -73,7 +73,7 @@ print(model.modules)
 
 结合GPT论文给出的模型架构，GPT2论文给出的模型架构改动，和GPT2模型的源码，总结出了如图3.1的GPT2模型结构图。
 
-![示意图](/assets/images/llm/gpt2_1.png "图3.1 GPT2模型总架构图")
+![示意图](/assets/images/llm/gpt2_1.png "图3.1 GPT2模型总架构图" =450x)
 
 ### 3.1 LN
 
