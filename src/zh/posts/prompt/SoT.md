@@ -146,4 +146,13 @@ SoT首先使用骨架提示模版$T^{s}$，以问题$q$为参数，组装一个�
 
 因此，研究人员在最后将对答案质量的更彻底的评估留给了未来的工作。
 
+
+
+
 ## 4 参考
+
+<!--
+[1] [Chain-of-Thought Prompting Elicits Reasoning in Large Language Models](https://zhuanlan.zhihu.com/p/610241799)
+[2] [GOOGLE | COT（chain of thought）开山之作，利用思维链提升复杂问题推理能力一、概述](https://mp.weixin.qq.com/s?__biz=Mzg3Njk2NTc4Mw==&mid=2247483895&idx=1&sn=33ab2fe70af404d528f0771ae5416c87&chksm=cf2b7b0ff85cf21928bba2205f9a3b61b44486bda55947f9f6f2891a4bf6d1b3787cfbf523e5&scene=21#wechat_redirect)
+[3] [CoT开山之作：Chain-of-Thought Prompting Elicits Reasoning in Large Language Models 论文解读](https://zhuanlan.zhihu.com/p/617594574)
+-->
