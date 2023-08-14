@@ -53,7 +53,7 @@ LoRA，英文全称Low-Rank Adaptation of Large Language Models，直译为大�
 
 LoRA的做法是，冻结预训练好的模型权重参数，然后在每个Transformer块里注入可训练的层，由于不需要对模型的权重参数重新计算梯度，所以，大大减少了需要训练的计算量。
 
-![](/assets/images/finetune/PEFT_01.png)
+![图2.1 LoRA原理示意图](/assets/images/finetune/PEFT_01.png "图2.1 LoRA原理示意图")
 
 结合上图，可以直观地理解LoRA的实现原理。LoRA冻结预训练模型权重，并将可训练的秩分解矩阵注入到Transformer层的每个权重中，大大减少了下游任务的可训练参数数量。直白的来说，实际上是增加了右侧的“旁支”，也就是先用一个Linear层A，将数据从 d维降到r，再用第二个Linear层B，将数据从r变回d维。最后再将左右两部分的结果相加融合，得到输出的hidden_state。
 
@@ -104,7 +104,7 @@ AdaLoRA，即自适应预算分配以实现参数有效的微调，是微软与�
 **关键的增量矩阵被分配了高秩**，这样它们可以捕获更细粒度和特定于任务的信息。
 **不太重要的增量矩阵被修剪为具有较低的秩**，以防止过度拟合并节省计算预算。
 
-![](/assets/images/finetune/PEFT_04.png)
+![图2.2 AdaLoRA原理示意图](/assets/images/finetune/PEFT_02.png "图2.2 AdaLoRA原理示意图")
 
 AdaLoRA包含两个重要组成部分：
 
@@ -137,7 +137,7 @@ AdaLoRA根据重要性评分自适应地分配参数预算，通过**对权重�
 **具有低重要性分数的三元组被授予低优先级**，因此奇异值被清零。
 **具有高度重要性的三元组会被保留**，并进行微调。
 
-![](/assets/images/finetune/PEFT_05.png)
+![图2.3 AdaLoRA伪代码示意图](/assets/images/finetune/PEFT_03.png "图2.3 AdaLoRA伪代码示意图")
 
 ### 2.3 prompt分类
 
@@ -161,7 +161,7 @@ Prefix-Tuning与Full-finetuning更新所有参数的方式不同，该方法是�
 
 Prefix-Tuning将一系列**连续的task-specific向量**添加到input前面，称之为前缀，如下图中的红色块所示。
 
-![](/assets/images/finetune/PEFT_06.png)
+![图2.4 Prefix-Tuning原理示意图](/assets/images/finetune/PEFT_04.png "图2.4 Prefix-Tuning原理示意图")
 
 Prefix-Tuning的作者提出了Prefix Tuning，该方法冻结LM参数，并且只优化Prefix（红色前缀块）。因此，只需要为每个任务存储前缀，使前缀调优模块化并节省空间。
 
@@ -177,7 +177,7 @@ Prefix-Tuning的作者提出了Prefix Tuning，该方法冻结LM参数，并且�
 
 Prefix-tuning是做生成任务，它根据不同的模型结构定义了不同的Prompt拼接方式，在GPT类的自回归模型上采用`[PREFIX, x, y]`，在T5类的encoder-decoder模型上采用`[PREFIX, x, PREFIX', y]`：
 
-![](/assets/images/finetune/PEFT_07.png)
+![图2.5 Prefix-Tuning用于生成任务的示例](/assets/images/finetune/PEFT_05.png "图2.5 Prefix-Tuning用于生成任务的示例")
 
 值得注意的还有三个改动：
 
@@ -193,11 +193,11 @@ Prompt-tuning 固定预训练参数，为每一个任务（a1、a2、b1、b2）�
 
 之后拼接 query 正常输入 LLM ，并**只训练这些 embedding** 。左图为单任务全参数微调，右图为 prompt tuning 。
 
-![](/assets/images/finetune/PEFT_08.png)
+![图2.6 Prompt Tuning原理示意图](/assets/images/finetune/PEFT_06.png "图2.6 Prompt Tuning原理示意图")
 
 Prompt-tuning给每个任务定义了自己的**Prompt，拼接到数据上作为输入**，同时freeze预训练模型进行训练，**在没有加额外层的情况下**，可以看到随着模型体积增大效果越来越好，最终追上了精调的效果：
 
-![](https://pic4.zhimg.com/80/v2-105188e34a31c728a473011260f266e7_720w.webp)
+![图2.7 Prompt Tuning模型参数对SuperGLUE分数的影响示意图](/assets/images/finetune/PEFT_07.webp "图2.7 Prompt Tuning模型参数对SuperGLUE分数的影响示意图")
 
 同时，Prompt-tuning还提出了Prompt-ensembling，也就是在一个batch里同时训练同一个任务的不同prompt，这样相当于训练了不同「模型」，比模型集成的成本小多了。
 
@@ -205,23 +205,21 @@ Prompt-tuning给每个任务定义了自己的**Prompt，拼接到数据上作�
 
 Prompting最初由人工设计Prompt，自然语言提示本身十分脆弱（如下图所示，选择不同的Prompt对下游任务的性能影响较大），而且从优化角度无法达到最优。
 
-为消除这一影响，P Tuning技术应用而生：P-Tuning v1将自然语言提示的**token，替换为可训练的嵌入**，同时利用LSTM进行Reparamerization加速训练，并引入少量自然语言提示的锚字符（Anchor，例如Britain）进一步提升效果，如下图b所示：
+为消除这一影响，P Tuning技术应用而生：P-Tuning v1将自然语言提示的**token，替换为可训练的嵌入**，同时利用LSTM进行Reparamerization加速训练，并引入少量自然语言提示的锚字符（Anchor，例如Britain）进一步提升效果，如图2.8所示。
 
-![](/assets/images/finetune/PEFT_09.png)
+![图2.8 P-Tuning原理示意图](/assets/images/finetune/PEFT_08.png "图2.8 P-Tuning原理示意图")
 
 P-Tuning v1，对于BERT类双向语言模型采用模版`(P1, x, P2, [MASK], P3)`，对于单向语言模型采用`(P1, x, P2, [MASK])`。
 
 P-Tuning v2提升小模型上的Prompt Tuning，最关键的就是引入**Prefix-tuning**技术。
 
-![](https://pic1.zhimg.com/80/v2-13f2923394517b2eae7b673ef56b38ec_720w.webp)
+![图2.9 P-Tuning v2引入的Prefix-tuning原理示意图](/assets/images/finetune/PEFT_09.webp "图2.9 P-Tuning v2引入的Prefix-tuning原理示意图")
 
 Prefix-tuning（前缀微调）最开始应用在NLG任务上，由[Prefix, x, y]三部分构成，如上图所示：Prefix为前缀，x为输入，y为输出。Prefix-tuning将预训练参数固定，Prefix参数进行微调：不仅只在embedding上进行微调，也在TransFormer上的embedding输入每一层进行微调。
 
 P-Tuning v2将Prefix-tuning应用于在NLU任务，如下图所示：
 
-![](/assets/images/finetune/PEFT_10.png)
-
-![](/assets/images/finetune/PEFT_11.png)
+![图2.10 P-Tuning v2用于NLU任务的示意图](/assets/images/finetune/PEFT_11.png "图2.10 P-Tuning v2用于NLU任务的示意图")
 
 p tuning v2简单来说其实是soft prompt的一种改进。
 
@@ -254,7 +252,7 @@ soft prompt比较依靠模型参数量，在参数量超过10B的模型上，效
 
 ## 3 实验结果
 
-![](/assets/images/finetune/PEFT_12.png)
+![图2.11 使用不同PEFT方法与全参数微调的结果对比图](/assets/images/finetune/PEFT_12.png "图2.11 使用不同PEFT方法与全参数微调的结果对比图")
 
 根据[结果](https://zhuanlan.zhihu.com/p/623866920)可以看出，在只训练1个epoch的情况下，只有LoRA与AdaLoRA的效果接近全参数微调，并且LoRA与全参数微调的差距不超过0.1%
 
