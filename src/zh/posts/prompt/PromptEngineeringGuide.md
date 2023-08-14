@@ -540,7 +540,7 @@ PAL (Program-Aided Language Models): Code as Reasoning
 
 Gao 等人 (2022) 提出了一种使用 LLM 阅读自然语言问题并生成程序作为中间推理步骤的方法。 创造的程序辅助语言模型 (PAL)，它与思维链提示的不同之处在于，它不是使用自由格式的文本来获取解决方案，而是将解决方案步骤卸载到编程运行时，例如 Python 解释器。
 
-![](/assets/images/prompt/PromptEngineeringGuide_01.png)
+![图3.1 PAL模型处理过程示例](//assets/images/prompt/PromptEngineeringGuide_01.png "图3.1 PAL模型处理过程示例")
 
 ```
 question = "Today is 27 February 2023. I was born exactly 25 years ago. What is the date I was born in MM/DD/YYYY?"
