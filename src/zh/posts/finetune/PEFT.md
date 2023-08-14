@@ -53,7 +53,7 @@ LoRA，英文全称Low-Rank Adaptation of Large Language Models，直译为大�
 
 LoRA的做法是，冻结预训练好的模型权重参数，然后在每个Transformer块里注入可训练的层，由于不需要对模型的权重参数重新计算梯度，所以，大大减少了需要训练的计算量。
 
-![图2.1 LoRA原理示意图](/assets/images/finetune/PEFT_01.png "图2.1 LoRA原理示意图" =386*350)
+![图2.1 LoRA原理示意图](/assets/images/finetune/PEFT_01.png "图2.1 LoRA原理示意图" =386x350)
 
 结合上图，可以直观地理解LoRA的实现原理。LoRA冻结预训练模型权重，并将可训练的秩分解矩阵注入到Transformer层的每个权重中，大大减少了下游任务的可训练参数数量。直白的来说，实际上是增加了右侧的“旁支”，也就是先用一个Linear层A，将数据从 d维降到r，再用第二个Linear层B，将数据从r变回d维。最后再将左右两部分的结果相加融合，得到输出的hidden_state。
 
