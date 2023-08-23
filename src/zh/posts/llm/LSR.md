@@ -89,7 +89,7 @@ D. 充分展开和加权方法： 包括Splade-max和distilSplade-max。它们�
 
 ### 4.1 研究问题一（RQ1）：LSR论文的结果是否可重现？
 
-在复现过程中，我们采用了原始论文和代码中所述的实验设置来训练LSR方法，并将结果与原始工作进行比较。表 Tab3 中呈现了复现的结果。大部分方法的得分要么略高于原始工作，要么与其相当。其中，DeepCT、uniCOIL、EPIC、TILDE $_{v2}$  和 distilSplade $_{max}$  的MRR稍高，而DeepImpact 和 uniCOIL $_{dT5q}$  的复现得分稍低。Sparta方法在原始论文中没有进行MSMarco评估，因此无法与其他方法进行比较。
+在复现过程中，我们采用了原始论文和代码中所述的实验设置来训练LSR方法，并将结果与原始工作进行比较。大部分方法的得分要么略高于原始工作，要么与其相当。其中，DeepCT、uniCOIL、EPIC、TILDE $_{v2}$  和 distilSplade $_{max}$  的MRR稍高，而DeepImpact 和 uniCOIL $_{dT5q}$  的复现得分稍低。Sparta方法在原始论文中没有进行MSMarco评估，因此无法与其他方法进行比较。
 
 复现的结果显示，DeepCT 和 uniCOIL（没有 docT5query 扩展）方法通常效率较低，而 distilSplade $_{max}$  方法实现了最高的 MRR。值得注意的是，具有相同架构但不同训练方法的方法之间得分差异显著。例如，将 DeepCT 的监督信号从令牌级权重改为段落级相关性，使得 uniCOIL 方法的 MRR 从 24.6 跃升 28% 至 31.6。这表明监督对性能至关重要，段落级别标签有助于更好地学习术语权重以实现段落级相关性。同样，使用硬负样本挖掘和蒸馏技术将 Splade 模型的 MRR 从 34.0 提高到 37.9。这种监督方法的改变使得 distilSplade $_{max}$  成为考虑中最有效的 LSR 方法。如果没有这种高级训练，Splade $_{max}$  的性能与 uniCOIL $_{dT5q}$  和 uniCOIL $_{tilde}$  相当。在组 (B) 中，EPIC 方法似乎已经达到其性能极限，其 MRR 显著低于两个 uniCOIL 变体。这可能是因为 EPIC 最初是在 40000 个三元组上进行训练的，而其他方法是在多达数百万个样本上进行训练的。
 
