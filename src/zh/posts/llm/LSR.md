@@ -83,7 +83,7 @@ D. 充分展开和加权方法： 包括Splade-max和distilSplade-max。它们�
 
 作者对已有的LSR方法进行复现，以下是复现结果，效果采用MRR指标进行评估。
 
-!["图3.1 复现结果"](/assets/images/llm/lsr_1.png "图3.1 复现结果")
+!["图3.1 复现结果"](/assets/images/llm/lsr_2.png "图3.1 复现结果")
 
 ## 4 结论
 
