@@ -66,6 +66,7 @@ $$
 match(q,d)
 =\frac
 {\rm{IDF}(q)\rm{tf}(q, d)(k_1+1)}{\rm{tf}(q,d)+k_1(1-b+\frac{b\left|d\right|}{avgdl})}
+\tag {3.1}
 $$
 
 其中IDF(q)表示词q的逆文档频率,tf(q,d)表示词q在文本d中出现的次数,|d|表示文本d的长度,avgdl表示所有文本的平均长度。k1,b为调优参数。
@@ -74,6 +75,7 @@ $$
 
 $$
 score(q,d) = \sum\limits_{q \in q} match(q, d)
+\tag {3.2}
 $$
 
 （5）根据相似度对文本排序,返回与查询最相似的Top-N文本。
