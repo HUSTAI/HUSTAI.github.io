@@ -5,7 +5,7 @@ date: 2023-07-14
 shortTitle: LLM推理综述
 title: 论文分享：基于提示学习的大型语言模型推理综述
 category:
-  - 推理方法
+  - 大模型推理
 tag:
   - Survey
   - LLM

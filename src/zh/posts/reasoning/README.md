@@ -1,10 +1,10 @@
 ---
-title: 推理方法
+title: 大模型推理
 icon: gem
 index: false
 article: false
 category:
-  - 推理方法
+  - 大模型推理
 tag:
   - Reasoning
 dir:
