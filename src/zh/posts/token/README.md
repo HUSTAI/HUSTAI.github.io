@@ -8,5 +8,5 @@ category:
 tag:
   - token
 dir:
-  order: 6
+  order: 8
 ---

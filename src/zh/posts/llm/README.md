@@ -8,5 +8,5 @@ category:
 tag:
   - LLM
 dir:
-  order: 1
+  order: 2
 ---
