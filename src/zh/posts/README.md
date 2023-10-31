@@ -15,5 +15,5 @@ article: false
 - [微调技术](./finetune/)
 - [评估方法](./eval/)
 - [数据集](./dataset/)
-- [推理方法](./reasoning/)
+- [大模型推理](./reasoning/)
 - [Token](./token/)

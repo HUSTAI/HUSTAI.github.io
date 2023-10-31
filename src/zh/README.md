@@ -36,8 +36,8 @@ projects:
     link: /zh/category/数据集/
 
   - icon: puzzle-piece
-    name: 推理方法
-    link: /zh/category/推理方法/
+    name: 大模型推理
+    link: /zh/category/大模型推理/
 
   - icon: puzzle-piece
     name: Token
