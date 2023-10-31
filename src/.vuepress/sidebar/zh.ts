@@ -8,11 +8,13 @@ export const zhSidebar = sidebar({
       icon: "lightbulb",
       prefix: "posts/",
       children: [
+        "rag/",
         "llm/",
         "prompt/",
         "finetune/",
         "eval/",
         "dataset/",
+        "reasoning/",
         "token/"
       ]
       // activeMatch: "^/zh/posts/",

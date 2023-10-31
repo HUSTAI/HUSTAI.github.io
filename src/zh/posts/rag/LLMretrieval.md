@@ -4,10 +4,11 @@ icon: clipboard-list
 date: 2023-09-07
 shortTitle: "大模型外挂知识库优化"
 category:
-  - Token
+  - rag
 tag:
   - LLM
   - 检索
+  - rag
 ---
 
 # 如何通过大模型实现外挂知识库优化

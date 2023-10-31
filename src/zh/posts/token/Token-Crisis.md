@@ -4,7 +4,7 @@ icon: pen-to-square
 date: 2023-05-31
 shortTitle: Token危机
 category:
-  - 语言模型
+  - Token
 tag:
   - 模型
   - 深度学习

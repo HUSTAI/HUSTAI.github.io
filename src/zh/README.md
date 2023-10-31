@@ -12,6 +12,10 @@ article: false
 
 projects:
   - icon: circle-question
+    name: RAG
+    link: /zh/category/rag/
+
+  - icon: circle-question
     name: 语言模型
     link: /zh/category/语言模型/
 
@@ -30,6 +34,10 @@ projects:
   - icon: gears
     name: 数据集
     link: /zh/category/数据集/
+
+  - icon: puzzle-piece
+    name: 推理方法
+    link: /zh/category/推理方法/
 
   - icon: puzzle-piece
     name: Token

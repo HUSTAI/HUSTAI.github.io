@@ -5,7 +5,7 @@ date: 2023-08-13
 shortTitle: 探究GPT4的推理能力
 title: 探究GPT-4到底有没有推理能力？
 category:
-  - 语言模型
+  - 推理方法
 tag:
   - GPT-4
   - Reasoning

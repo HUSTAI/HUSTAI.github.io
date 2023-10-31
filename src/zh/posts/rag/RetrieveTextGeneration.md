@@ -3,10 +3,11 @@ author: 最后的开神-wkyc
 icon: pen-to-square
 date: 2023-09-21
 category:
-  - 语言模型
+  - rag
 tag:
   - 检索
   - 文本生成
+  - rag
 # sticky: 10
 ---
 
