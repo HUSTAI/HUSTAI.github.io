@@ -1,5 +1,5 @@
 ---
-title: 检索增强生成RAG
+title: 检索增强生成(RAG)
 icon: puzzle-piece
 index: false
 article: false

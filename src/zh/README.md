@@ -12,7 +12,7 @@ article: false
 
 projects:
   - icon: circle-question
-    name: 检索增强生成RAG
+    name: 检索增强生成(RAG)
     link: /zh/category/rag/
 
   - icon: circle-question
