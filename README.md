@@ -19,7 +19,7 @@
 - 微调技术(`Finetune`)
 - 评估方法(`Eval`)
 - 数据集(`Dataset`)
-- 推理方法(`Reasoning`)
+- 大模型推理(`Reasoning`)
 - `Token`
 
 在 [src/zh/posts/${category}](https://github.com/HUSTAI/HUSTAI.github.io/tree/main/src/zh/posts/) 目录下增加一个新的 `md` 文件，参考[配置](https://theme-hope.vuejs.press/zh/config/frontmatter/info.html)来设置 `Frontmatter`
