@@ -13,7 +13,7 @@
 
 `category` 请从以下类别中选择
 
-- `RAG`
+- 检索增强生成(`RAG`)
 - 语言模型(`LLM`)
 - 提示技术(`Prompt`)
 - 微调技术(`Finetune`)

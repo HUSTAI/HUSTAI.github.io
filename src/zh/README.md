@@ -12,7 +12,7 @@ article: false
 
 projects:
   - icon: circle-question
-    name: RAG
+    name: 检索增强生成(RAG)
     link: /zh/category/rag/
 
   - icon: circle-question
@@ -40,7 +40,7 @@ projects:
     link: /zh/category/大模型推理/
 
   - icon: puzzle-piece
-    name: Token
+    name: Token、分词
     link: /zh/category/token/
 
 footer: 分享知识-分享快乐
