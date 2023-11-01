@@ -6,7 +6,6 @@ shortTitle: "CIMI: 因果启发的可解释框架"
 category:
   - 提示技术
 tag:
-  - 推理
   - LLM
   - 可解释
 ---

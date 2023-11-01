@@ -8,7 +8,7 @@ category:
   - 大模型推理
 tag:
   - GPT-4
-  - Reasoning
+  - 推理
   - OpenAI
 ---
 

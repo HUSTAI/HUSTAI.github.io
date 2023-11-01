@@ -6,7 +6,7 @@ article: false
 category:
   - 大模型推理
 tag:
-  - Reasoning
+  - 推理
 dir:
   order: 7
 ---
