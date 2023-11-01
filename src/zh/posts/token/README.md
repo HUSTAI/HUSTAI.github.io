@@ -1,5 +1,5 @@
 ---
-title: Token
+title: Token、分词
 icon: puzzle-piece
 index: false
 article: false
@@ -8,5 +8,5 @@ category:
 tag:
   - token
 dir:
-  order: 6
+  order: 8
 ---

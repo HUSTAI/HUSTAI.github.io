@@ -9,9 +9,11 @@ article: false
 
 本页面包含一些论文分享的分类：
 
+- [RAG](./rag/)
 - [语言模型](./llm/)
 - [提示技术](./prompt/)
 - [微调技术](./finetune/)
 - [评估方法](./eval/)
 - [数据集](./dataset/)
+- [大模型推理](./reasoning/)
 - [Token](./token/)

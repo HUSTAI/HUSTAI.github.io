@@ -35,7 +35,7 @@ GPT-2 如何计算大于？：在预训练语言模型中解释数学能力
 ![示意图](/assets/images/llm/LLM2_1.png "图1.1 知识回路中信息传播示意图")
 
 这个工作主要探讨：为何 GPT 模型能够通过预训练获得数学能力。
-具体而言，用的是类似「The war lasted from the year 17YY to the year 17」的 Prompt，GPT 模型可以做到输出的 Next Token 的年份数字 XX 大于 YY，这说明它在预训练中学会了数字间的比较关系。通过探究，发现模型在预训练过程中形成了解决这个问题的知识回路，如图1.1所示。
+具体而言，用的是类似`The war lasted from the year 17YY to the year 17`的 Prompt，GPT 模型可以做到输出的 Next Token 的年份数字 XX 大于 YY，这说明它在预训练中学会了数字间的比较关系。通过探究，发现模型在预训练过程中形成了解决这个问题的知识回路，如图1.1所示。
 有两个关键部分，第一个是中间层的某些 Attention Head，比如图中 a5.h5 代表 Transformer 第 5 层的第 5 个 Attention Head，这些 Attention Head 主要作用是聚焦到 YY 年份并向高层传播；另外一个关键是第 8 到 11 层的 MLP 层，这些层的 MLP 完成 「大于」运算，所以最后 GPT 能够正确输出结果。而且，中间层的 Attention Head 和上层 MLP 也有相对应的传递关系，比如第 9 层 MLP 主要接收信息来源于 a9.h1，而第 8 层 MLP 的信息来源则比较多。可以看出，信息从下到上形成了一个特定的传播路径。
 
 ![示意图](/assets/images/llm/LLM2_2.png "图1.2 知识回路数字比较示意图")
