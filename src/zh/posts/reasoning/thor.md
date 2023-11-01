@@ -2,9 +2,9 @@
 author: 猞猁-zlj
 icon: wand-magic-sparkles
 date: 2023-09-03
-shortTitle: "THOR: CoT-ISA"
+shortTitle: THOR：思维链促进情感分析
 category:
-  - 提示技术
+  - 大模型推理
 tag:
   - 推理
   - LLM

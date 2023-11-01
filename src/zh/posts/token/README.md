@@ -1,5 +1,5 @@
 ---
-title: Token
+title: Token、分词
 icon: puzzle-piece
 index: false
 article: false

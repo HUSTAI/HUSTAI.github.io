@@ -4,7 +4,7 @@ icon: wand-magic-sparkles
 date: 2023-08-27
 shortTitle: "Graph-of-Thought: 思维图"
 category:
-  - 提示技术
+  - 大模型推理
 tag:
   - 推理
   - LLM

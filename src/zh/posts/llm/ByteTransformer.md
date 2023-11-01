@@ -2,7 +2,7 @@
 author: 猞猁-zlj
 icon: pen-to-square
 date: 2023-06-05
-shortTitle: Bytetransformer
+shortTitle: ByteTransformer优化推理速度
 title: 大幅优化推理速度-ByteTransformer
 category:
   - 语言模型
