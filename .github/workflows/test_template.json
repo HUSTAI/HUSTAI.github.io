@@ -1,0 +1,34 @@
+[
+    {
+        "type":"0",
+        "question":"【客服】：xxx【用户】：xx \n【选项】：xxx",
+        "model_answer":"【客服】：xxx",
+        "ref_answer":"【客服】:xxxx",
+        "score":"100"
+        "model_score":""
+    },
+    {
+        "type":"0",
+        "question":"【客服】：xxx【用户】：xx \n 【客服】：xxx【用户】：xx \n 【客服】：xxx【用户】：xx\n【选项】：xxx",
+        "model_answer":"【客服】：xxx",
+        "ref_answer":"【客服】:xxxx",
+        "score":"100"
+        "model_score":""
+    },
+    {
+        "question":"【客服】：xxx【用户】：xx \n 【客服】：xxx【用户】：xx \n 【客服】：xxx【用户】：xx\n【选项】：xxx",
+        "model_answer":"【客服】：xxx",
+        "ref_answer":"【客服】:xxxx",
+        "score":"100"
+        "model_score":""
+    },
+    {
+        "question":"【客服】：xxx【用户】：xx \n 【客服】：xxx【用户】：xx \n 【客服】：xxx【用户】：xx\n【选项】：xxx",
+        "model_answer":"【客服】：xxx",
+        "ref_answer":"【客服】:xxxx",
+        "score":"100"
+        "model_score":""
+    },
+]
+    
+
