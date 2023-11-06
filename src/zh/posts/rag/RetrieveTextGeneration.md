@@ -1,6 +1,6 @@
 ---
 author: 最后的开神-wkyc
-icon: pen-to-square
+icon: blog
 date: 2023-09-21
 category:
   - rag

@@ -1,6 +1,6 @@
 ---
 author: 研究生鱼皮-yjf
-icon: pen-to-square
+icon: blog
 date: 2023-09-04
 category:
   - rag
