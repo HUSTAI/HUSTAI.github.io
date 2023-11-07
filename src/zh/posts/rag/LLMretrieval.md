@@ -1,6 +1,6 @@
 ---
 author: 猞猁-zlj
-icon: clipboard-list
+icon: blog
 date: 2023-09-07
 shortTitle: "大模型外挂知识库优化"
 category:
