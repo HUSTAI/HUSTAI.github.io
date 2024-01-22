@@ -1,6 +1,6 @@
 ---
 author: 猞猁-zlj
-icon: pen-to-square
+icon: wand-magic-sparkles
 date: 2023-08-13
 shortTitle: 探究GPT4的推理能力
 title: 探究GPT-4到底有没有推理能力？
@@ -8,7 +8,7 @@ category:
   - 大模型推理
 tag:
   - GPT-4
-  - Reasoning
+  - 推理
   - OpenAI
 ---
 

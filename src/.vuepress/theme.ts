@@ -18,7 +18,8 @@ export default hopeTheme({
 
   logo: "/logo.png",
 
-  repo: "HUSTAI/HUSTAI.github.io",
+  repo: "https://gitee.com/hustai",
+  repoLabel: "Gitee",
 
   docsDir: "src",
 

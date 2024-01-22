@@ -1,6 +1,6 @@
 ---
-title: 检索增强生成(RAG)
-icon: puzzle-piece
+title: 检索增强生成RAG
+icon: network-wired
 index: false
 article: false
 category:

@@ -4,7 +4,7 @@ icon: wand-magic-sparkles
 date: 2023-06-05
 shortTitle: "Chain-of-Thought: 思维链"
 category:
-  - 提示技术
+  - 大模型推理
 tag:
   - 推理
   - LLM
