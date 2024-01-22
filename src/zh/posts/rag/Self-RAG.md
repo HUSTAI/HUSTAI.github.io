@@ -95,4 +95,4 @@ Self-RAG首先训练一个评论器模型C来生成反思令牌，用于评估�
 # 4 Self-RAG与普通RAG优势对比
 
 - **自适应段落检索**：通过这种方式，LLM可以继续检索上下文，直到找到所有相关的上下文（当然是在上下文窗口内）；
-- **更相关的检索**：很多时候，embedding模型并不擅长检索相关上下文。Self-RAG可能通过relevant/irrelevant的特殊token来解决这一问题；
+- **更相关的检索**：很多时候，embedding模型并不擅长检索相关上下文。Self-RAG可能通过relevant/irrelevant的特殊token来解决这一问题。
